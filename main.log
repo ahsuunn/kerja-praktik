@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.2)  2 SEP 2026 14:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.2)  6 SEP 2026 22:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -885,71 +885,91 @@ File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 topaths.code.tex
 File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))) (/usr/share/texmf-dist/tex/latex/framed/framed.sty
+)))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+shapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geomet
+ric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+arrows.code.tex
+File: tikzlibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\arrowsize=\dimen315
+))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+positioning.code.tex
+File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/usr/share/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip98
-\fb@frw=\dimen315
-\fb@frh=\dimen316
-\FrameRule=\dimen317
-\FrameSep=\dimen318
+\fb@frw=\dimen316
+\fb@frh=\dimen317
+\FrameRule=\dimen318
+\FrameSep=\dimen319
 )
 LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input lin
-e 106.
+e 107.
 
 (/usr/share/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
 File: ot1ntxtlf.fd 2021/05/24 v1.0 font definition file for OT1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 106.
+(Font)              scaled to size 12.0pt on input line 107.
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 106.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 107.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line
- 106.
+ 107.
 
 (/usr/share/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 107.
 LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 
-106.
+107.
 
 (/usr/share/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 107.
 LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line
- 106.
+ 107.
 
 (/usr/share/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 107.
 LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input lin
-e 106.
+e 107.
 
 (/usr/share/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -988,13 +1008,13 @@ LaTeX Font Info:    ... okay on input line 106.
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count356
-\scratchdimen=\dimen319
+\scratchdimen=\dimen320
 \scratchbox=\box77
 \nofMPsegments=\count357
 \nofMParguments=\count358
 \everyMPshowfont=\toks49
 \MPscratchCnt=\count359
-\MPscratchDim=\dimen320
+\MPscratchDim=\dimen321
 \MPnumerator=\count360
 \makeMPintoPDFobject=\count361
 \everyMPtoPDFconversion=\toks50
@@ -1009,13 +1029,13 @@ e
 ))
 \c@mv@tabular=\count362
 \c@mv@boldtabular=\count363
-LaTeX Info: Command `\dddot' is already robust on input line 106.
-LaTeX Info: Command `\ddddot' is already robust on input line 106.
+LaTeX Info: Command `\dddot' is already robust on input line 107.
+LaTeX Info: Command `\ddddot' is already robust on input line 107.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 106.
+Package hyperref Info: Link coloring OFF on input line 107.
  (./main.out)
 (./main.out)
 \@outlinefile=\write4
@@ -1028,18 +1048,25 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 17.28pt on input line 4.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 17.28pt on input line 12.
-<figures/logo-itb.png, id=114, 71.0655pt x 101.178pt>
+<figures/logo-itb.png, id=138, 71.0655pt x 101.178pt>
 File: figures/logo-itb.png Graphic file (type png)
 <use figures/logo-itb.png>
 Package pdftex.def Info: figures/logo-itb.png  used on input line 15.
 (pdftex.def)             Requested size: 85.35826pt x 121.5303pt.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 14.4pt on input line 17.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 14.4pt on input line 20.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts
-/enc/dvips/newtx/ntx-ot1-tlf.enc} <./figures/logo-itb.png>]) (./frontmatter/Lem
-bar_Pengesahan_Dosen.tex
+/enc/dvips/newtx/ntx-ot1-tlf.enc} <./figures/logo-itb.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.22 \end{titlepage}
+                     [2]) (./frontmatter/Lembar_Pengesahan_Dosen.tex
 LaTeX Font Info:    Trying to load font information for OT1+minntx on input lin
 e 21.
 
@@ -1117,118 +1144,289 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.24 \end{titlepage}
-                     [1]) (./frontmatter/Lembar_Pengesahan_Perusahaan.tex
+l.22 \underline{\NIPDosenPembimbing}
+                                    \par} [1]
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.24 \end{titlepage}
-                     [1]) (./frontmatter/Abstrak.tex
+                     [2]) (./frontmatter/Lembar_Pengesahan_Perusahaan.tex
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.22 \underline{\NomorPegawai}
+                              \par} [1]
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.24 \end{titlepage}
+                     [2]) (./frontmatter/Abstrak.tex
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
 (Font)              scaled to size 12.0pt on input line 13.
-)
-(./frontmatter/Kata_Pengantar.tex [1
+ [1
 
 
-]
-Overfull \hbox (3.30087pt too wide) in paragraph at lines 4--5
-\OT1/minntx/m/n/12 mem-ban-tu pelak-sanaan ker-ja prak-tik, ter-ma-suk pihak-pi
-hak yang mem-bi-ayai kegiatan
+])
+(./frontmatter/Kata_Pengantar.tex [2] [3
+
+]) [4] (./main.toc
+Overfull \hbox (0.59647pt too wide) in paragraph at lines 15--15
+ [][] [][]\OT1/ntxtlf/b/n/12 Pengembangan Fungsi Man-a-je-men Pe-nag-i-han Pi-u
+-tang dan Alur 
  []
 
-) [2
+[5
 
-] (./main.toc)
+])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [3
-
-] [4] (./main.lof)
+ [6] (./main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- [5
+ [7
 
-] (./main.lot)
+] (./main.lot
+Overfull \hbox (3.51318pt too wide) in paragraph at lines 4--4
+ [][] [][]\OT1/minntx/m/n/12 Jadwal ren-cana dan pelak-sanaan kegiatan Ker-ja P
+rak-tik di PT Paragon 
+ []
+
+)
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
- [6
+ [8
 
-]
-(./frontmatter/Daftar_Lampiran.tex) [7
+] (./frontmatter/Daftar_Lampiran.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 5--135
 
-] (./frontmatter/Daftar_Istilah.tex)
-[8
+ []
+
+[9
+
+] (./frontmatter/Daftar_Istilah.tex
+Overfull \hbox (50.22635pt too wide) in alignment at lines 5--8
+ [] [] [] 
+ []
+
+
+Overfull \hbox (50.22635pt too wide) in alignment at lines 8--19
+ [] [] [] 
+ []
+
+) [10
 
 ] (./chapters/BabI_Pendahuluan.tex
 \bbl@ensure@indonesian {Bab} 1.
+
+Overfull \hbox (9.69678pt too wide) in paragraph at lines 8--9
+[]\OT1/minntx/m/n/12 Seiring pe-sat-nya per-tum-buhan jum-lah transak-si dan ek
+span-si area op-era-sion-al Paragon,
+ []
+
 [1
 
 
-]) (./chapters/BabII_Organisasi_dan_LKP.tex [2]
-\bbl@ensure@indonesian {Bab} 2.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 11.
-[3
-
 ]
-Underfull \hbox (badness 2707) in paragraph at lines 56--56
-[]|\OT1/minntx/m/n/12 Sulit un-tuk men-garahkan
- []
-
-) (./chapters/BabIII_Judul_Pekerjaan.tex [4] [5]
-\bbl@ensure@indonesian {Bab} 3.
-[6
-
-]
+LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input lin
+e 15.
+ (/usr/share/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
+File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
+)
+LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 15.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/it' will be
 (Font)              scaled to size 12.0pt on input line 24.
-<figures/Diagram_Interaksi_Antarobjek.png, id=237, 366.2775pt x 240.7905pt>
-File: figures/Diagram_Interaksi_Antarobjek.png Graphic file (type png)
-<use figures/Diagram_Interaksi_Antarobjek.png>
-Package pdftex.def Info: figures/Diagram_Interaksi_Antarobjek.png  used on inpu
-t line 33.
-(pdftex.def)             Requested size: 298.75394pt x 196.41336pt.
- [7]) (./chapters/BabIV_Rangkuman.tex [8 <./figures/Diagram_Interaksi_Antarobje
-k.png>]
+
+Overfull \hbox (2.51967pt too wide) in paragraph at lines 25--26
+[]\OT1/ntxtlf/b/n/12 Persistensi Berkas Buk-ti Pem-ba-yaran Lur-ing\OT1/minntx/
+m/n/12 : Mengim-ple-men-tasikan peny-
+ []
+
+[2{/usr/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}])
+(./chapters/BabII_Organisasi_dan_LKP.tex [3]
+\bbl@ensure@indonesian {Bab} 2.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 20.
+LaTeX Font Info:    Trying to load font information for OT1+qhv on input line 2
+0.
+(/usr/share/texmf-dist/tex/latex/tex-gyre/ot1qhv.fd
+File: ot1qhv.fd 2009/09/25 v1.2 font definition file for OT1/qhv
+)
+LaTeX Font Info:    Font shape `OT1/qhv/m/n' will be
+(Font)              scaled to size 10.29301pt on input line 20.
+LaTeX Font Info:    Font shape `OT1/qhv/m/it' will be
+(Font)              scaled to size 10.29301pt on input line 21.
+LaTeX Font Info:    Font shape `OT1/qhv/m/n' will be
+(Font)              scaled to size 9.40002pt on input line 25.
+LaTeX Font Info:    Font shape `OT1/qhv/m/it' will be
+(Font)              scaled to size 9.40002pt on input line 25.
+ [4
+
+]
+Overfull \hbox (5.4956pt too wide) in paragraph at lines 41--42
+\OT1/minntx/m/n/12 Tim FATL (\OT1/ntxtlf/m/it/12 Fi-nan-cial Ac-count-ing & Tec
+h-nol-o-gy Lo-gis-tics\OT1/minntx/m/n/12 ) bertu-gas mengem-bangkan,
+ []
+
+[5{/usr/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-rm.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
+[]|\OT1/minntx/m/n/12 Onboarding HR &
+ []
+
+
+Underfull \hbox (badness 4556) in paragraph at lines 87--87
+\OT1/minntx/m/n/12 pengem-bang & ak-ses
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
+[]|\OT1/minntx/m/n/12 Implementasi \OT1/ntxtlf/m/it/12 non-
+ []
+
+
+Underfull \hbox (badness 2142) in paragraph at lines 87--87
+\OT1/minntx/m/n/12 *read-only* sta-tus pe-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
+[]|\OT1/minntx/m/n/12 Refactoring ar-sitek-tur
+ []
+
+
+Underfull \hbox (badness 1048) in paragraph at lines 87--87
+\OT1/minntx/m/n/12 Re-vi-sion v2 & im-ple-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
+\OT1/minntx/m/n/12 men-tasi \OT1/ntxtlf/m/it/12 Se-tor Cash
+ []
+
+
+Underfull \hbox (badness 3601) in paragraph at lines 87--87
+[]|\OT1/minntx/m/n/12 Integrasi \OT1/ntxtlf/m/it/12 end-point \OT1/minntx/m/n/1
+2 re-
+ []
+
+
+Underfull \hbox (badness 5622) in paragraph at lines 87--87
+[]|\OT1/minntx/m/n/12 Implementasi \OT1/ntxtlf/m/it/12 In-dexed-
+ []
+
+
+Underfull \hbox (badness 3536) in paragraph at lines 87--87
+\OT1/minntx/m/n/12 penan-ganan *bug fix-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
+[]|\OT1/minntx/m/n/12 Dokumentasi tek-nis,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
+\OT1/minntx/m/n/12 peny-er-a-han kode, &
+ []
+
+) (./chapters/BabIII_Judul_Pekerjaan.tex [6] [7]
+\bbl@ensure@indonesian {Bab} 3.
+[8
+
+]
+LaTeX Font Info:    Trying to load font information for OT1+ntxtt on input line
+ 22.
+ (/usr/share/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
+File: ot1ntxtt.fd 2012/04/20 v3.1
+)
+LaTeX Font Info:    Font shape `OT1/ntxtt/m/n' will be
+(Font)              scaled to size 12.0pt on input line 22.
+ [9] [10]
+Overfull \hbox (36.36057pt too wide) in paragraph at lines 89--89
+[]\OT1/ntxtt/m/n/12 // Contoh penerapan alur penyimpanan bukti bayar luring via
+ IndexedDB[] 
+ []
+
+[11]) (./chapters/BabIV_Rangkuman.tex [12]
 \bbl@ensure@indonesian {Bab} 4.
-) (./backmatter/Referensi.tex [9
 
-]) (./appendices/TOR.tex [10
-
-
-] [11
-
-] [12]
-[13] [14] [15
+Overfull \hbox (9.44345pt too wide) in paragraph at lines 13--14
+[]\OT1/ntxtlf/b/n/12 Integrasi Peny-im-panan Lur-ing Berkas Buk-ti Ba-yar via I
+n-dexed-DB\OT1/minntx/m/n/12 : Menghi-
+ []
 
 
-]) (./main.aux)
+Overfull \hbox (7.35565pt too wide) in paragraph at lines 14--15
+[]\OT1/ntxtlf/b/n/12 Optimasi Kin-er-ja dan An-tar-mu-ka Peng-gu-na\OT1/minntx/
+m/n/12 : Mengim-ple-men-tasikan \OT1/ntxtlf/m/it/12 server-
+ []
+
+[13
+
+]
+Overfull \hbox (0.11961pt too wide) in paragraph at lines 22--23
+[]\OT1/ntxtlf/b/n/12 Manajemen Wak-tu dan Penye-le-sa-ian Masalah\OT1/minntx/m/
+n/12 : Dalam meng-hadapi kendala
+ []
+
+[14]) (./backmatter/Referensi.tex [15]
+Overfull \hbox (6.50339pt too wide) in paragraph at lines 6--7
+\OT1/ntxtlf/m/it/12 Docs\OT1/minntx/m/n/12 . Ak-ses 10 Agus-tus 2026. []$\OT1/n
+txtt/m/n/12 https : / / developer . mozilla . org / en-[]US /
+ []
+
+) (./appendices/TOR.tex [16
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--38
+
+ []
+
+[17
+
+]) [18] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5E54D2474F62634155E9D4F6A1C866C6;4394.
+(rerunfilecheck)             Checksum: CC91CF65D9A007DFFEA7DA8CDF7B629F;7623.
  ) 
 Here is how much of TeX's memory you used:
- 28070 strings out of 469515
- 496653 string characters out of 5470808
- 889338 words of memory out of 5000000
- 56131 multiletter control sequences out of 15000+600000
- 653997 words of font info for 88 fonts, out of 8000000 for 9000
+ 29447 strings out of 469515
+ 529427 string characters out of 5470808
+ 918433 words of memory out of 5000000
+ 57434 multiletter control sequences out of 15000+600000
+ 666574 words of font info for 93 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,10n,117p,736b,804s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texmf-di
-st/fonts/type1/public/newtx/ztmbi.pfb></usr/share/texmf-dist/fonts/type1/public
-/newtx/ztmr.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (26 pages, 309841 bytes).
+ 84i,10n,117p,1772b,994s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/tex-gyre/qhvr.pfb></usr/share/texmf
+-dist/fonts/type1/public/tex-gyre/qhvri.pfb></usr/share/texmf-dist/fonts/type1/
+public/tex-gyre/qtmr.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txtt
+.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texmf
+-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/newtx/ztmr.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on main.pdf (34 pages, 317379 bytes).
 PDF statistics:
- 339 PDF objects out of 1000 (max. 8388607)
- 296 compressed objects within 3 object streams
- 82 named destinations out of 1000 (max. 500000)
- 239 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 470 PDF objects out of 1000 (max. 8388607)
+ 411 compressed objects within 5 object streams
+ 126 named destinations out of 1000 (max. 500000)
+ 282 words of extra memory for PDF output out of 10000 (max. 10000000)
 

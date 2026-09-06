@@ -1,13 +1,38 @@
 \chapter{Rangkuman}
 
 \section{Rangkuman Pelaksanaan Pekerjaan}
-Bagian ini menjelaskan rangkuman proses pelaksanaan pekerjaan yang telah dilakukan.
+Kegiatan Kerja Praktik telah dilaksanakan selama 10 minggu terhitung sejak 2 Juni 2026 hingga 11 Agustus 2026 di PT Paragon Technology and Innovation, tepatnya pada tim FATL (\textit{Financial Accounting \& Technology Logistics}) Direktorat \textit{Information Technology}. Penulis menjalankan tugas sebagai \textit{Software Engineer} dengan fokus utama melakukan pengembangan dan refactoring pada sistem aplikasi manajemen piutang usaha \textbf{Parapay}.
+
+Rangkaian pekerjaan dilaksanakan secara terstruktur melalui metodologi \textit{Agile Development}, mencakup tahap analisis kebutuhan bisnis bersama pembimbing teknis, perancangan komponen antarmuka antardepan berbasis \textit{React/TypeScript}, integrasi \textit{API backend}, pengujian fungsionalitas, hingga proses \textit{Merge Request} (MR) ke repositori utama perusahaan.
 
 \section{Rangkuman Hasil Pekerjaan}
-Tuliskan rangkuman semua hasil pekerjaan, baik yang sudah maupun yang belum diselesaikan. Sampaikan juga hasil pengembangan keprofesian, peningkatan kompetensi, atau keahlian yang diperoleh.
+Hasil utama yang diperoleh dari pelaksanaan Kerja Praktik ini meliputi:
+\begin{enumerate}[label=\arabic*)]
+  \item \textbf{Terimplementasinya Fitur Simpan Draf (\textit{Save as Draft})}: Memberikan fleksibilitas bagi \textit{collector} (FAR) untuk menyimpan progress penagihan secara sementara tanpa risiko kehilangan data akibat sesi terputus.
+  \item \textbf{Terwujudnya Arsitektur Alur Revisi Pembayaran Terbaru (\textit{Revision v2})}: Berhasil melakukan \textit{refactoring} besar-besaran dengan menggantikan kode usang Revision v1 menjadi komponen modular Revision v2 yang dilengkapi \textit{state invalidation}, pembatasan alokasi (\textit{non-allocation lock}), serta dukungan \textit{read-only mode}.
+  \item \textbf{Integrasi Penyimpanan Luring Berkas Bukti Bayar via IndexedDB}: Menghilangkan permasalahan gagal simpan bukti bayar transfer pada peramban saat terjadi perulangan alur revisi setor tunai.
+  \item \textbf{Optimasi Kinerja dan Antarmuka Pengguna}: Mengimplementasikan \textit{server-side search} dan \textit{infinite scroll} untuk pemuatan daftar pelanggan dan area koleksi, serta menyempurnakan format angka pemisah ribuan dan status \textit{badge} dinamik.
+\end{enumerate}
 
-\section{Evaluasi Diri}
-Tuliskan secara jujur kesan, penilaian penerapan profesionalisme dan etika profesi dalam pekerjaan, refleksi keberhasilan dan kegagalan, introspeksi diri, dan hal-hal yang dapat diperbaiki pada diri Anda pada saat pelaksanaan kerja praktik untuk perbaikan ke depan. Evaluasi diri ini ditulis dalam bentuk pernyataan-pernyataan yang positif dan tidak subyektif berdasarkan hasil penilaian pada kinerja dan kemampuan diri sendiri.
+\section{Evaluasi Diri dan Pengembangan Keprofesian}
+Pelaksanaan Kerja Praktik di PT Paragon Technology and Innovation memberikan pembelajaran profesional yang sangat berharga bagi penulis. Beberapa aspek refleksi dan evaluasi diri yang diperoleh antara lain:
+\begin{enumerate}[label=\arabic*)]
+  \item \textbf{Peningkatan Kompetensi Teknis}: Penulis berhasil memperdalam pemahaman mengenai pengembangan aplikasi \textit{frontend} skala industri, perancangan arsitektur kode yang modular, pengelolaan state yang kompleks, serta pemanfaatan API peramban (\textit{IndexedDB}).
+  \item \textbf{Penerapan Etika Profesi dan Kerjasama Tim}: Penulis belajar menyesuaikan diri dengan standar penulisan kode perusahaan, menerapkan prinsip keterbacaan kode (\textit{clean code}), serta berkomunikasi secara efektif dan jujur dalam \textit{daily standup} maupun proses \textit{code review}.
+  \item \textbf{Manajemen Waktu dan Penyelesaian Masalah}: Dalam menghadapi kendala teknis seperti penanganan \textit{bug} pada alur kas atau penyesuaian \textit{endpoint} baru, penulis dilatih untuk berpikir analitis, mencari akar permasalahan melalui pencatatan log, dan berdiskusi secara proaktif dengan mentor.
+\end{enumerate}
 
-\section{Ucapan Terima Kasih}
-Sampaikan ucapan terima kasih kepada pihak-pihak yang relevan dalam pelaksanaan kerja praktik.
+\section{Saran}
+Berdasarkan pengalaman dan hasil pelaksanaan Kerja Praktik, penulis memberikan beberapa saran yang dapat dijadikan pertimbangan pengembangan lebih lanjut:
+
+\subsection{Saran untuk Pengembangan Aplikasi Parapay}
+\begin{enumerate}[label=\arabic*)]
+  \item Mengembangkan fitur pengujian otomatis di sisi \textit{frontend} (\textit{unit testing} \& \textit{integration testing}) untuk modul Revision v2 guna mempermudah regresi saat terjadi pembaruan \textit{endpoint}.
+  \item Mempertimbangkan implementasi \textit{Service Worker} untuk memberikan kemampuan aplikasi web progresif (\textit{Progressive Web App} / PWA) secara penuh saat FAR berada di area dengan koneksi internet sangat terbatas.
+\end{enumerate}
+
+\subsection{Saran untuk Pelaksanaan Kerja Praktik Berikutnya}
+\begin{enumerate}[label=\arabic*)]
+  \item Mahasiswa hendaknya mempersiapkan pemahaman awal mengenai arsitektur sistem dan pustaka utama yang digunakan perusahaan sebelum masa Kerja Praktik dimulai agar alur \textit{onboarding} berjalan lebih cepat.
+  \item Menjaga dokumentasi aktivitas harian secara konsisten sejak awal pelaksanaan Kerja Praktik untuk mempermudah proses penyusunan laporan akhir.
+\end{enumerate}

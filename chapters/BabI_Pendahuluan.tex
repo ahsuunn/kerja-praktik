@@ -1,26 +1,44 @@
 \chapter{Pendahuluan}
 
 \section{Latar Belakang}
-Tuliskanlah latar belakang dari pelaksanaan kerja praktik (KP) di perusahaan dan substansi yang digeluti berkaitan dengan tujuan, misi, visi atau fungsi perusahaan. Jangan menuliskan tentang pelaksanaan mata kuliah Kerja Praktek seperti yang ditulis di dalam kurikulum.
+PT Paragon Technology and Innovation merupakan salah satu perusahaan manufaktur kosmetik terbesar di Indonesia yang menaungi berbagai merek terkemuka seperti Wardah, Make Over, Emina, Kahf, dan LABORE. Dalam menjalankan aktivitas operasional skala nasional, efisiensi dan transparansi pengelolaan piutang usaha (\textit{Account Receivable} atau AR) menjadi elemen krusial untuk menjaga kelancaran alur kas (\textit{cash flow}) serta stabilitas keuangan perusahaan.
 
-Untuk menuliskan paragraf berikutnya berikan jarak satu Enter seperti contoh pada template ini. Sebuah paragraf hendaknya mengandung satu pokok pikiran dan beberapa kalimat gagasan pendukung.
+Pada struktur organisasi perusahaan, pengelolaan piutang usaha ditangani di bawah Direktorat \textit{Information Technology} oleh tim FATL (\textit{Financial Accounting \& Technology Logistics}). Salah satu sistem utama yang dikembangkan dan dikelola oleh tim FATL adalah aplikasi **Parapay**. Parapay merupakan sistem aplikasi manajemen dan penagihan pembayaran faktur piutang yang digunakan oleh petugas penagih di lapangan atau FAR (\textit{Field Account Receivable}). Melalui aplikasi Parapay, FAR dapat membuat daftar koleksi penagihan faktur pelanggan, memproses pembayaran multi-metode (tunai, transfer bank, maupun giro), mengelola sisa tagihan, serta menyetorkan bukti pembayaran ke pusat.
+
+Seiring pesatnya pertumbuhan jumlah transaksi dan ekspansi area operasional Paragon, aplikasi Parapay menghadapi tantangan teknis dan kebutuhan fitur baru yang kompleks. Beberapa kendala utama yang dijumpai meliputi perlunya penanganan mekanisme simpan sementara (\textit{Save as Draft}) saat FAR menyusun daftar penagihan, transparansi alur revisi pembayaran kas maupun non-kas, validasi pembatasan alokasi pembayaran, ketahanan penanganan berkas bukti transfer secara luring (\textit{offline-first storage}) menggunakan \textit{IndexedDB}, serta optimasi pemuatan antarmuka antardepan (\textit{frontend}) saat menangani ribuan data pelanggan dan faktur penagihan.
+
+Berlandaskan kebutuhan bisnis dan teknis tersebut, pelaksanaan Kerja Praktik ini difokuskan pada **Pengembangan Fungsi Manajemen Penagihan Piutang dan Alur Revisi Pembayaran pada Aplikasi Parapay**. Melalui kegiatan ini, penulis berkontribusi secara langsung sebagai \textit{Software Engineer} dalam mengembangkan modul antarmuka pengguna, merefaktor arsitektur alur revisi pembayaran, serta mengintegrasikan pemrosesan data dengan \textit{backend} untuk meningkatkan keandalan dan kualitas aplikasi Parapay.
 
 \section{Tempat dan Waktu Pelaksanaan}
-Tuliskan tempat atau lokasi dan waktu pelaksanaan kegiatan kerja praktik.
+Kegiatan Kerja Praktik dilaksanakan pada:
+\begin{itemize}
+  \item \textbf{Lokasi Perusahaan}: PT Paragon Technology and Innovation, Head Office, Jl. Ciledug Raya No. 10 RT 018 / RW 003, Kelurahan Ulujami, Kecamatan Pesanggrahan, Jakarta Selatan 12250.
+  \item \textbf{Unit Kerja}: Direktorat \textit{Information Technology}, Tim \textit{Financial Accounting \& Technology Logistics} (FATL).
+  \item \textbf{Waktu Pelaksanaan}: 2 Juni 2026 hingga 11 Agustus 2026 (durasi 10 minggu).
+\end{itemize}
 
 \section{Ruang Lingkup Pekerjaan}
-Tuliskan ruang lingkup pekerjaan di tempat KP, bukan lingkup KP seperti dituliskan pada kurikulum. Deskripsi pekerjaan secara lengkap dapat dijelaskan di Bab III.
+Ruang lingkup pekerjaan penulis selama pelaksanaan Kerja Praktik meliputi hal-hal berikut:
+\begin{enumerate}[label=\arabic*)]
+  \item \textbf{Pengembangan Fitur Draf dan Potong Tagihan}: Mengimplementasikan antarmuka serta logika alur \textit{Save as Draft} untuk daftar penagihan koleksi FAR dan pemrosesan detail dokumen Potong Tagihan.
+  \item \textbf{Refactoring dan Pengembangan Alur Revisi Pembayaran (\textit{Revision Flow})}: Merancang ulang arsitektur alur revisi dari Revision v1 menuju Revision v2 yang modular, menangani alur \textit{Cash Before Setor} dan \textit{Cash After Setor}, pembatasan alokasi (\textit{non-allocation lock}), serta pembaruan status data otomatis (\textit{state invalidation}).
+  \item \textbf{Persistensi Berkas Bukti Pembayaran Luring}: Mengimplementasikan penyimpanan bukti bayar di sisi peramban web memanfaatkan perantara API \textit{IndexedDB} untuk alur revisi setor tunai.
+  \item \textbf{Optimasi Performa dan Komponen UI}: Mengimplementasikan \textit{server-side search}, \textit{infinite scroll}, status \textit{badge} dinamik, serta penanganan validasi input mata uang dan pengurutan data tabel.
+\end{enumerate}
 
 \section{Sistematika Penulisan}
-Tuliskanlah sistematika penulisan laporan hasil kerja praktik ini yang dapat mencakup hal-hal sebagai berikut:
+Laporan Kerja Praktik ini disusun dengan sistematika penulisan sebagai berikut:
 
 \begin{enumerate}[label=\arabic*)]
-\item Bab I Pendahuluan\\
-Bab ini \ldots
-\item Bab II Organisasi atau Lingkungan Kerja Praktik\\
-Bab ini berisi \ldots
-\item Bab III Judul Pekerjaan\\
-Bab ini berisi \ldots
-\item Bab IV Rangkuman\\
-Bab ini berisi \ldots
+\item \textbf{Bab I Pendahuluan}\\
+Bab ini menguraikan latar belakang pelaksanaan kerja praktik, lokasi dan waktu pelaksanaan, ruang lingkup pekerjaan yang dilakukan, serta sistematika penulisan laporan.
+
+\item \textbf{Bab II Organisasi dan Lingkungan Kerja Praktik}\\
+Bab ini menjelaskan profil umum PT Paragon Technology and Innovation, struktur organisasi perusahaan dan tim FATL, serta deskripsi umum mengenai lingkungan tempat kerja praktik dilaksanakan.
+
+\item \textbf{Bab III Judul Pekerjaan: Pengembangan Fungsi Manajemen Penagihan Piutang dan Alur Revisi Pembayaran pada Aplikasi Parapay}\\
+Bab ini menyajikan pembahasan teknis secara mendalam mengenai arsitektur sistem Parapay, analisis permasalahan, metode penyelesaian, implementasi fitur-fitur utama (Save as Draft, Revision Flow v2, Potong Tagihan, IndexedDB, dan optimasi UI), serta pengujian dan evaluasi hasil pekerjaan.
+
+\item \textbf{Bab IV Rangkuman}\\
+Bab ini memberikan kesimpulan atas seluruh hasil pekerjaan Kerja Praktik serta menyampaikan saran-saran teknis maupun operasional untuk pengembangan aplikasi Parapay di masa mendatang.
 \end{enumerate}

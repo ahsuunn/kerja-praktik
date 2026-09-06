@@ -1,63 +1,88 @@
-\chapter{Organisasi atau Lingkungan Kerja Praktik}
+\chapter{Organisasi dan Lingkungan Kerja Praktik}
+
+\section{Profil Perusahaan}
+PT Paragon Technology and Innovation (ParagonCorp) merupakan salah satu perusahaan manufaktur kosmetik terbesar di Indonesia yang didirikan pada tahun 1985 oleh Nurhayati Subakat. Berawal dari industri skala rumah tangga, ParagonCorp telah berkembang pesat menjadi pemimpin pasar produk kecantikan dan perawatan diri nasional melalui merek-merek ternama seperti Wardah, Make Over, Emina, Kahf, LABORE, Biodef, Wonderly, dan Beyondly.
+
+ParagonCorp mengusung misi untuk memberikan kemanfaatan yang lebih besar bagi masyarakat melalui inovasi teknologi, keberlanjutan lingkungan, dan pemberdayaan sumber daya manusia. Kantor pusat (\textit{Head Office}) ParagonCorp berlokasi di Pesanggrahan, Jakarta Selatan, dengan fasilitas pabrik manufaktur utama yang berada di Kawasan Industri Jatake, Tangerang.
 
 \section{Struktur Organisasi}
-Tuliskanlah struktur organisasi perusahaan KP dan jelaskan posisi tim KP pada struktur organisasi tersebut. Dalam gambar struktur organisasi, unit atau divisi tempat melaksanakan kerja praktik dibedakan dari unit lain dengan penambahan \textit{shading} atau garis putus-putus.
+Struktur organisasi PT Paragon Technology and Innovation dirancang secara fungsional untuk mendukung efisiensi manufaktur, distribusi, serta integrasi teknologi informasi. Kegiatan Kerja Praktik penulis dilaksanakan pada **Direktorat \textit{Information Technology} (IT)**, khususnya dalam unit kerja **FATL (\textit{Financial Accounting \& Technology Logistics})**.
 
-Perhatikan tata cara penggunaan gambar. Gambar yang Anda buat harus dijelaskan dalam paragraf sebelum gambar tersebut ditampilkan. Gambar~\ref{fig:komponen-dasar-sistem} menunjukkan sebuah gambaran umum dari suatu sistem yang terdiri dari masukan, proses, keluaran, dan umpan balik atau umpan ke depan.
+Gambar~\ref{fig:struktur-organisasi} menunjukkan struktur hirarki organisasi pada PT Paragon Technology and Innovation serta kedudukan unit FATL tempat penulis melaksanakan Kerja Praktik.
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[font=\small,>=stealth]
-\node[draw,minimum width=2.8cm,minimum height=0.9cm] (a) at (0,0) {Masukan};
-\node[draw,minimum width=2.8cm,minimum height=0.9cm] (b) at (4,0) {Proses};
-\node[draw,minimum width=2.8cm,minimum height=0.9cm] (c) at (8,0) {Keluaran};
-\draw[->] (a) -- (b);
-\draw[->] (b) -- (c);
-\draw[->] (c.south) .. controls +(0,-1.2) and +(0,-1.2) .. node[below]{Umpan balik/Umpan ke depan} (a.south);
+\begin{tikzpicture}[font=\small\sffamily, >=stealth, node distance=1.2cm]
+\tikzstyle{block} = [draw, rectangle, fill=blue!10, text width=4.5cm, text centered, rounded corners, minimum height=0.9cm]
+\tikzstyle{subblock} = [draw, rectangle, fill=gray!10, text width=3.8cm, text centered, minimum height=0.8cm]
+\tikzstyle{targetblock} = [draw=blue!80!black, line width=1.2pt, rectangle, fill=blue!25, text width=4.2cm, text centered, rounded corners, minimum height=0.9cm]
+
+\node[block] (ceo) {Board of Directors (CEO)};
+\node[block, below of=ceo, node distance=1.4cm] (dit) {Direktorat \textit{Information Technology}};
+\node[subblock, left of=dit, node distance=4.8cm] (mfg) {Direktorat \textit{Manufacturing}};
+\node[subblock, right of=dit, node distance=4.8cm] (cml) {Direktorat \textit{Commercial \& Sales}};
+
+\node[targetblock, below of=dit, node distance=1.5cm] (fatl) {Tim FATL\\\footnotesize(\textit{Financial Accounting \& Tech Logistics})};
+\node[subblock, left of=fatl, node distance=4.0cm] (infra) {Tim \textit{Infrastructure \& Security}};
+\node[subblock, right of=fatl, node distance=4.0cm] (corp) {Tim \textit{Corporate Applications}};
+
+\draw[->, thick] (ceo) -- (dit);
+\draw[->] (ceo) -| (mfg);
+\draw[->] (ceo) -| (cml);
+\draw[->, thick] (dit) -- (fatl);
+\draw[->] (dit) -| (infra);
+\draw[->] (dit) -| (corp);
 \end{tikzpicture}
-\caption{Komponen dasar sistem prediksi anomali pada stasiun pengawasan cuaca di Bandung (Kartodirjo 1977)}
-\label{fig:komponen-dasar-sistem}
+\caption{Struktur organisasi PT Paragon Technology and Innovation dan posisi tim FATL}
+\label{fig:struktur-organisasi}
 \end{figure}
 
-Gambar yang Anda gunakan hendaknya merupakan gambar yang dibuat sendiri, bukan merupakan hasil \textit{copy-paste} dari sumber lain. Meskipun digambar sendiri, jika gambar tersebut diambil dari suatu sumber, tuliskan sumber referensinya seperti pada Gambar~\ref{fig:komponen-dasar-sistem}.
+\section{Unit Kerja dan Lingkungan Kerja}
+Tim FATL (\textit{Financial Accounting \& Technology Logistics}) bertugas mengembangkan, mengintegrasikan, dan memelihara ekosistem aplikasi keuangan, logistik, serta akuntansi perusahaan. Salah satu produk unggulan yang dikelola oleh tim FATL adalah aplikasi **Parapay**, yaitu platform penagihan dan pelaporan transaksi piutang usaha (\textit{Account Receivable}) yang digunakan oleh ribuan *collector* atau FAR (\textit{Field Account Receivable}) di berbagai cabang distribusikan di Indonesia.
 
-Istilah asing ditulis harus dalam huruf miring, misalnya pada penulisan \textit{copy-paste}. Jika ada istilah asing yang memiliki padanan dalam bahasa Indonesia, terjemahkan istilah tersebut ke dalam bahasa Indonesia, misalnya kata \textit{download} dapat diterjemahkan menjadi unduh.
+Selama Kerja Praktik, penulis ditempatkan sebagai \textit{Software Engineer} (berfokus pada \textit{frontend development} serta integrasi API \textit{backend}) di bawah bimbingan langsung Bapak Tegar Satria Nurhuda. Lingkungan kerja di tim FATL menerapkan budaya kolaboratif dengan metodologi *Agile Development*, yang mencakup pertemuan koordinasi harian (\textit{Daily Standup}), pengulasan kode (\textit{Code Review / Merge Request}), serta pengujian sistem secara berkala.
 
-Jika Anda ingin memerinci sesuatu, gunakan urutan dalam angka atau huruf seperti contoh berikut ini:
+\section{Deskripsi Pekerjaan dan Tanggung Jawab}
+Tanggung jawab utama penulis selama pelaksanaan Kerja Praktik meliputi:
 \begin{enumerate}[label=\arabic*)]
-\item mewujudkan suatu produk;
-\item memberikan arah dan pedoman dalam pelaksanaan kerja praktik; dan
-\item mengoptimalkan pelaksanaan kerja praktik.
+  \item menganalisis kebutuhan alur bisnis penagihan piutang dan revisi pembayaran bersama tim pengembang dan pembimbing;
+  \item merancang komponen antarmuka pengguna (\textit{User Interface}) berbasis komponen modular yang konsisten dengan desain aplikasi Parapay;
+  \item mengimplementasikan logika \textit{frontend} untuk pemrosesan status penagihan, validasi pengisian data, serta kalkulasi sisa pembayaran faktur;
+  \item merefaktor arsitektur alur revisi dari Revision v1 menuju Revision v2 yang lebih terpelihara (\textit{maintainable});
+  \item mengintegrasikan mekanisme penyimpanan luring berkas bukti bayar menggunakan \textit{IndexedDB}; dan
+  \item melakukan pengujian fungsionalitas, perbaikan bug (\textit{bug fixing}), serta penggabungan kode (\textit{Merge Request}) ke repositori utama.
 \end{enumerate}
-Hindari penggunaan \textit{bullet point} dalam pemerincian.
 
-\section{Unit Kerja}
-
-\subsection{<Tambahkan Subbab Jika Diperlukan>}
-Tuliskan lingkup pekerjaan divisi atau bagian tempat Anda melaksanakan KP secara ringkas. Kemudian, kaitkan lingkup pekerjaan divisi tersebut dengan lingkup pekerjaan Anda yang sesuai dengan lingkup dari divisi tersebut.
-
-\subsection{<Tambahkan Subbab Jika Diperlukan>}
-Untuk membuat tabel, Anda dibebaskan untuk membuat \textit{layout} tabel yang Anda inginkan. Perhatikan bahwa judul tabel ditulis di atas tabel dan diposisikan sedemikian rupa agar terlihat rapi. Tabel~\ref{tab:kelebihan-kekurangan} memperlihatkan contoh peletakan tabel.
+\section{Jadwal Kegiatan Kerja Praktik}
+Kerja Praktik dilaksanakan selama 10 minggu, terhitung mulai tanggal 2 Juni 2026 hingga 11 Agustus 2026. Tabel~\ref{tab:jadwal-kp} merangkum alokasi kegiatan mingguan yang dilaksanakan oleh penulis selama berada di tempat Kerja Praktik.
 
 \begin{table}[H]
-\caption{Kelebihan dan kekurangan jenis-jenis soal ujian di kalangan sekolah menengah tingkat atas}
-\label{tab:kelebihan-kekurangan}
+\caption{Jadwal rencana dan pelaksanaan kegiatan Kerja Praktik di PT Paragon Technology and Innovation}
+\label{tab:jadwal-kp}
 \centering
-\begin{tabularx}{\textwidth}{|p{3.2cm}|X|X|}
+\begin{tabularx}{\textwidth}{|c|X|p{4.2cm}|}
 \hline
-\textbf{Tipe} & \textbf{Kelebihan} & \textbf{Kekurangan} \\
+\textbf{Minggu} & \textbf{Rentang Waktu} & \textbf{Fokus Kegiatan Utama} \\
 \hline
-Pilihan Ganda & Dapat menilai sesuatu & Cenderung hanya sesuatu \\
+1 & 02 Juni – 05 Juni 2026 & Onboarding HR \& FATL, setup lingkungan pengembang \& akses VPN. \\
 \hline
-Benar-Salah & Menilai sesuatu & Sulit untuk melakukan sesuatu \\
+2 & 08 Juni – 12 Juni 2026 & Pengembangan fitur \textit{Save as Draft} \& penanganan tipe pembayaran FAR. \\
 \hline
-Ujian Interpretasi & Dapat menilai sesuatu & Sulit untuk mengarahkan sesuatu \\
+3 & 15 Juni – 19 Juni 2026 & Pembuatan fondasi antarmuka \textit{Revision Flow}. \\
+\hline
+4 & 22 Juni – 26 Juni 2026 & Integrasi API \& pembuatan komponen halaman Potong Tagihan. \\
+\hline
+5 & 29 Juni – 03 Juli 2026 & Implementasi \textit{non-allocation lock} \& mode *read-only* status penagihan. \\
+\hline
+6 & 06 Juli – 10 Juli 2026 & Refactoring arsitektur Revision v2 \& implementasi \textit{Setor Cash Flow}. \\
+\hline
+7 & 13 Juli – 17 Juli 2026 & Integrasi \textit{endpoint} revisi pembayaran \& pengelompokan pelanggan. \\
+\hline
+8 & 20 Juli – 24 Juli 2026 & Implementasi \textit{IndexedDB} bukti transfer \& optimasi \textit{infinite scroll}. \\
+\hline
+9 & 27 Juli – 31 Juli 2026 & Pengujian integrasi, validasi *edge cases*, \& penanganan *bug fixing*. \\
+\hline
+10 & 03 Ags – 11 Ags 2026 & Dokumentasi teknis, penyerahan kode, \& penyusunan laporan KP. \\
 \hline
 \end{tabularx}
 \end{table}
-
-\section{Deskripsi Pekerjaan}
-Tuliskan deskripsi setiap tahap pekerjaan yang dilakukan dilengkapi dengan deskripsi pekerjaan mahasiswa KP terkait dengan organisasi tempat mahasiswa bekerja.
-
-\section{Jadwal Kerja}
-Tuliskan gambaran jadwal kegiatan selama KP, rinciannya mengacu ke lampiran \textit{Log Activity}.
