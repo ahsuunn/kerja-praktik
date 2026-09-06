@@ -1,6 +1,6 @@
 \babel@toc {indonesian}{}\relax 
-\contentsline {chapter}{DAFTAR LAMPIRAN}{ix}{Item.6}%
-\contentsline {chapter}{DAFTAR ISTILAH DAN SINGKATAN}{x}{Item.6}%
+\contentsline {chapter}{DAFTAR LAMPIRAN}{viii}{Item.6}%
+\contentsline {chapter}{DAFTAR ISTILAH DAN SINGKATAN}{ix}{Item.6}%
 \contentsline {chapter}{\numberline {1}Pendahuluan}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Latar Belakang}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Tempat dan Waktu Pelaksanaan}{2}{section.1.2}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.2)  6 SEP 2026 22:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.2)  6 SEP 2026 22:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1046,149 +1046,132 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 4.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 17.28pt on input line 4.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 14.4pt on input line 6.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 12.
+(Font)              scaled to size 14.4pt on input line 12.
 <figures/logo-itb.png, id=138, 71.0655pt x 101.178pt>
 File: figures/logo-itb.png Graphic file (type png)
 <use figures/logo-itb.png>
 Package pdftex.def Info: figures/logo-itb.png  used on input line 15.
 (pdftex.def)             Requested size: 85.35826pt x 121.5303pt.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 17.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 20.
+(Font)              scaled to size 10.95pt on input line 17.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts
-/enc/dvips/newtx/ntx-ot1-tlf.enc} <./figures/logo-itb.png>]
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.22 \end{titlepage}
-                     [2]) (./frontmatter/Lembar_Pengesahan_Dosen.tex
+/enc/dvips/newtx/ntx-ot1-tlf.enc} <./figures/logo-itb.png>]) (./frontmatter/Lem
+bar_Pengesahan_Dosen.tex
 LaTeX Font Info:    Trying to load font information for OT1+minntx on input lin
-e 21.
+e 22.
 
 (/usr/share/texmf-dist/tex/latex/newtx/ot1minntx.fd
 File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
 )
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 12.0pt on input line 21.
+(Font)              scaled to size 12.0pt on input line 22.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 8.8pt on input line 21.
+(Font)              scaled to size 8.8pt on input line 22.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 6.6pt on input line 21.
+(Font)              scaled to size 6.6pt on input line 22.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 12.0pt on input line 21.
+(Font)              scaled to size 12.0pt on input line 22.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 8.8pt on input line 21.
+(Font)              scaled to size 8.8pt on input line 22.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 6.6pt on input line 21.
+(Font)              scaled to size 6.6pt on input line 22.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 12.0pt on input line 21.
+(Font)              scaled to size 12.0pt on input line 22.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 8.8pt on input line 21.
+(Font)              scaled to size 8.8pt on input line 22.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.6pt on input line 21.
+(Font)              scaled to size 6.6pt on input line 22.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 12.0pt on input line 21.
+(Font)              scaled to size 12.0pt on input line 22.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 8.8pt on input line 21.
+(Font)              scaled to size 8.8pt on input line 22.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.6pt on input line 21.
+(Font)              scaled to size 6.6pt on input line 22.
 LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 
-21.
+22.
 
 (/usr/share/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2024/04/09 Fontinst v1.933 font definitions for U/ntxmia.
 )
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 12.0pt on input line 21.
+(Font)              scaled to size 12.0pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 8.8pt on input line 21.
+(Font)              scaled to size 8.8pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.6pt on input line 21.
+(Font)              scaled to size 6.6pt on input line 22.
 LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 
-21.
+22.
 
 (/usr/share/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 )
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 12.0pt on input line 21.
+(Font)              scaled to size 12.0pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 8.8pt on input line 21.
+(Font)              scaled to size 8.8pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.6pt on input line 21.
+(Font)              scaled to size 6.6pt on input line 22.
 LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 
-21.
+22.
 
 (/usr/share/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 12.0pt on input line 21.
+(Font)              scaled to size 12.0pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 8.8pt on input line 21.
+(Font)              scaled to size 8.8pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.6pt on input line 21.
+(Font)              scaled to size 6.6pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 12.0pt on input line 21.
+(Font)              scaled to size 12.0pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 8.8pt on input line 21.
+(Font)              scaled to size 8.8pt on input line 22.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.6pt on input line 21.
+(Font)              scaled to size 6.6pt on input line 22.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.22 \underline{\NIPDosenPembimbing}
-                                    \par} [1]
+l.25 \end{titlepage}
+                     [1]) (./frontmatter/Lembar_Pengesahan_Perusahaan.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.24 \end{titlepage}
-                     [2]) (./frontmatter/Lembar_Pengesahan_Perusahaan.tex
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.22 \underline{\NomorPegawai}
-                              \par} [1]
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.24 \end{titlepage}
-                     [2]) (./frontmatter/Abstrak.tex
+l.25 \end{titlepage}
+                     [1]) (./frontmatter/Abstrak.tex
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 13.
- [1
+(Font)              scaled to size 12.0pt on input line 14.
+)
+(./frontmatter/Kata_Pengantar.tex [1
 
 
-])
-(./frontmatter/Kata_Pengantar.tex [2] [3
+] [2
 
-]) [4] (./main.toc
+]) [3] (./main.toc
 Overfull \hbox (0.59647pt too wide) in paragraph at lines 15--15
  [][] [][]\OT1/ntxtlf/b/n/12 Pengembangan Fungsi Man-a-je-men Pe-nag-i-han Pi-u
 -tang dan Alur 
  []
 
-[5
+[4
 
 ])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [6] (./main.lof)
+ [5] (./main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- [7
+ [6
 
 ] (./main.lot
 Overfull \hbox (3.51318pt too wide) in paragraph at lines 4--4
@@ -1200,14 +1183,14 @@ rak-tik di PT Paragon
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
- [8
+ [7
 
 ] (./frontmatter/Daftar_Lampiran.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 5--135
 
  []
 
-[9
+[8
 
 ] (./frontmatter/Daftar_Istilah.tex
 Overfull \hbox (50.22635pt too wide) in alignment at lines 5--8
@@ -1219,7 +1202,7 @@ Overfull \hbox (50.22635pt too wide) in alignment at lines 8--19
  [] [] [] 
  []
 
-) [10
+) [9
 
 ] (./chapters/BabI_Pendahuluan.tex
 \bbl@ensure@indonesian {Bab} 1.
@@ -1290,11 +1273,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--87
  []
 
 
-Underfull \hbox (badness 2142) in paragraph at lines 87--87
-\OT1/minntx/m/n/12 *read-only* sta-tus pe-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 87--87
 []|\OT1/minntx/m/n/12 Refactoring ar-sitek-tur
  []
@@ -1321,8 +1299,9 @@ Underfull \hbox (badness 5622) in paragraph at lines 87--87
  []
 
 
-Underfull \hbox (badness 3536) in paragraph at lines 87--87
-\OT1/minntx/m/n/12 penan-ganan *bug fix-
+Underfull \hbox (badness 4316) in paragraph at lines 87--87
+\OT1/minntx/m/n/12 i-dasi \OT1/ntxtlf/m/it/12 edge cas-es\OT1/minntx/m/n/12 , &
+
  []
 
 
@@ -1410,23 +1389,23 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: CC91CF65D9A007DFFEA7DA8CDF7B629F;7623.
  ) 
 Here is how much of TeX's memory you used:
- 29447 strings out of 469515
- 529427 string characters out of 5470808
- 918433 words of memory out of 5000000
+ 29448 strings out of 469515
+ 529445 string characters out of 5470808
+ 917433 words of memory out of 5000000
  57434 multiletter control sequences out of 15000+600000
- 666574 words of font info for 93 fonts, out of 8000000 for 9000
+ 667691 words of font info for 95 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,10n,117p,1772b,994s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,10n,117p,1680b,994s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/tex-gyre/qhvr.pfb></usr/share/texmf
 -dist/fonts/type1/public/tex-gyre/qhvri.pfb></usr/share/texmf-dist/fonts/type1/
 public/tex-gyre/qtmr.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txtt
 .pfb></usr/share/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texmf
 -dist/fonts/type1/public/newtx/ztmbi.pfb></usr/share/texmf-dist/fonts/type1/pub
 lic/newtx/ztmr.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (34 pages, 317379 bytes).
+Output written on main.pdf (30 pages, 316525 bytes).
 PDF statistics:
- 470 PDF objects out of 1000 (max. 8388607)
- 411 compressed objects within 5 object streams
- 126 named destinations out of 1000 (max. 500000)
+ 456 PDF objects out of 1000 (max. 8388607)
+ 401 compressed objects within 5 object streams
+ 125 named destinations out of 1000 (max. 500000)
  282 words of extra memory for PDF output out of 10000 (max. 10000000)
 
