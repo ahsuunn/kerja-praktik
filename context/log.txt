@@ -1,0 +1,118 @@
+Selasa	02 Juni 2026	Onboarding HR, Setup email paragon, akun gitlab
+Rabu	03 Juni 2026	Onboarding tim FATL, Setup VPN, Mempelajari Sistem yang ada di dalam FATL
+Kamis	04 Juni 2026	Mempelajari Sistem yang ada di dalam FATL
+Jumat	05 Juni 2026	Onboarding Parapay, Mempelajari Sistem Parapay
+Senin	08 Juni 2026	Daily Standup, Mengerjakan Fitur Save as Draft
+Selasa	09 Juni 2026	Daily Standup, Mengerjakan Fitur Save as Draft
+Rabu	10 Juni 2026	Daily Standup, Mengerjakan render disabled cash payment type in far bayar tagihan
+Kamis	11 Juni 2026	Mengerjakan render disabled cash payment type in far bayar tagihan
+Jumat	12 Juni 2026	Daily Standup, Mengerjakan fitur Save as Draft
+Senin	15 Juni 2026	Daily Standup, Mengerjakan fitur Save as Draft
+Rabu	17 Juni 2026	Daily Standup, Mengerjakan fitur Revision Flow
+Kamis	18 Juni 2026	Daily Standup, Mengerjakan fitur Revision Flow
+Jumat	19 Juni 2026	Daily Standup, Mengerjakan fitur Revision Flow
+Senin	22 Juni 2026	- Daily Standup
+- Mengerjakan fitur Revision Flow
+Selasa	23 Juni 2026	- Daily Standup
+- Melanjutkan pengerjaan fondasi komponen antarmuka (user interface) untuk Revision Flow.
+Rabu	24 Juni 2026	- Daily Standup
+- Melakukan integrasi logika penanganan status revisi pada beberapa komponen frontend di modul Revision Flow.
+Kamis	25 Juni 2026	- Daily Standup
+- Melakukan refactoring internal dan optimasi komponen agar alur pemrosesan data Revision Flow berjalan sinkron.
+Jumat	26 Juni 2026	- Daily Standup
+- Melanjutkan pengerjaan Revision Flow di sisi frontend.
+- Memulai implementasi fitur baru pada halaman Potong Tagihan: melakukan integrasi endpoint API utama, membuat query hooks khusus untuk penarikan data, serta menambahkan kolom aksi (action column), perutean (routing), dan halaman detail Potong Tagihan.
+- Menambahkan komponen warning modal untuk penanganan missing progress saat melakukan pembuatan (create) data Potong Tagihan. 
+Senin	29 Juni 2026	- Daily Standup
+- Melanjutkan pengerjaan Revision Flow
+- Melakukan pembaruan fitur Potong Tagihan dengan menambahkan informasi Collector Name dan kolom Memo pada halaman detail. 
+- Menambahkan komponen progress modal yang sempat terlewat untuk FAR Netral Collection.
+Selasa	30 Juni 2026	- Daily Standup 
+- Fokus melakukan bug fixing dan penyesuaian minor pada halaman Potong Tagihan. 
+- Melakukan pembaruan struktur kolom data spesifik pada sub-halaman detail Potong Tagihan. 
+Rabu	01 Juli 2026	- Daily Standup
+- Kembali berfokus pada optimasi Revision Flow.
+- Melakukan modifikasi teknis pada struktur URL halaman Potong Tagihan dengan menghapus sufiks /list untuk merapikan rute navigasi aplikasi.
+Kamis	02 Juli 2026	- Daily Standup
+- Melanjutkan pengerjaan berkas komponen frontend untuk alur revisi pembayaran.
+- Menyelesaikan penggabungan (merge) MR untuk fitur Detail Potong Tagihan dan Progress Modal.
+Jumat	03 Juli 2026	- Daily Standup
+- Melakukan pengembangan fitur Revision Flow: menambahkan fitur penguncian non-alokasi (non-allocation lock) dan fitur contiguous add payment.  
+- Mengimplementasikan fungsi read-only mode pada antarmuka pengguna ketika dokumen pembayaran memiliki status "Menunggu Admin".  
+- Menambahkan label penanda status "Accepted" pada komponen revisi, mengubah argumen source revisi pada kondisi rejected, serta mengubah label aksi dari "Approve" menjadi "Accept" pada detail revisi pembayaran
+- Memodifikasi argumen pengambilan data daftar revisi (revision list fetch) serta fungsi penolakan status koleksi (tolak koleksi status arg).
+Senin	06 Juli 2026	- Daily Standup
+- Mengimplementasikan alur setor tunai (setor cash flow) ketika pengguna menambahkan entri pembayaran tunai baru pada modul revisi
+- Menyelesaikan pengerjaan Revision Flow: melakukan perombakan besar (refactoring) dengan menghapus kode usang Revision v1 dan menetapkan Revision v2 sebagai arsitektur utama. 
+- Memecah (breakdown) struktur halaman Editor menjadi komponen-komponen modular yang lebih kecil agar meningkatkan keterbacaan kode (maintainability).  
+- Menambahkan fungsi manipulasi state (invalidate) untuk melakukan penyegaran data otomatis (refresh) pada entri revisi.
+- Memperbaiki penanganan berkas (file handling) pada modal revisi netral, penanganan jumlah per pelanggan (per-customer amount), validasi ganda nilai total pembayaran, validasi ambigu pada upload, serta perbaikan rute navigasi pembuatan koleksi data.  
+- Menambahkan fitur Select All pada tabel data pelanggan di halaman detail koleksi.  
+- Mulai menambahkan komponen status badge (penanda status) untuk daftar Potong Tagihan serta mengimplementasikan kondisi disabled state untuk tombol pembaruan data. 
+Selasa	07 Juli 2026	- Daily Standup 
+- Mengubah operan argumen di frontend untuk menangani pengambilan status pembayaran (payment status) dari server.  
+- Melakukan pengujian akhir fungsionalitas dan berhasil menggabungkan (merge) seluruh pekerjaan fitur Revision Flow dan Status Badge Potong Tagihan ke repositori utama. 
+Rabu	08 Juli 2026	- Menyelesaikan penambahan status badge global pada daftar dan detail Potong Tagihan untuk menggantikan penanda statis sebelumnya.  
+Kamis	09 Juli 2026	- Daily Standup                
+- Menambahkan logika untuk mempertahankan catatan (memo) hanya jika merupakan perubahan non-alokasi.
+- Menambahkan pemisah ribuan (thousand separator) pada input mata uang.
+- Menambahkan filter ID koleksi ketika membuka halaman detail koleksi.
+- Mengarahkan pengeditan setor tunai (cash after setor) ke halaman penyetoran.
+- Memperbaiki status penguncian pembayaran pada editor revisi.
+- Menambahkan daftar pelanggan dan menyesuaikan payload data ke endpoint baru.
+Jumat	10 Juli 2026	- Daily Standup               
+- Melakukan penyaringan untuk mengecualikan pembayaran berstatus ""Done"" dari payload revisi.
+- Memastikan pembayaran dengan status ""Done"" dan ""Draft"" mempertahankan catatan (memo) yang sama.
+- Mengimplementasikan solusi penanganan sementara untuk alur revisi kas (temporary cash revision flow).
+Senin	13 Juli 2026	- Daily Standup               
+- Menambahkan status tertunda (pending state) pada daftar pelanggan serta menangani berkas bukti transfer.
+- Menambahkan penanganan kasus gagal tagih ke dalam payload revisi pembayaran.
+Selasa	14 Juli 2026	- Daily Standup              
+- Melakukan refactoring fungsi pengambil data (payment fetchers) pada modul revisi.
+- Menambahkan logika pengelompokan pelanggan (customer grouping) koleksi pada modul revisi.
+- Menghapus log debugger sisa perhitungan pembayaran untuk merapikan kode.
+Rabu	15 Juli 2026	- Daily Standup                
+- Mengintegrasikan tombol aksi Accept dan Decline ke endpoint revisi yang baru.
+- Menambahkan modal gagal tagih untuk penanganan faktur yang belum dialokasikan (unallocated invoices).
+- Memperbaiki validasi pengeditan retur yang tidak valid, penolakan tipe pembayaran, serta mengoptimalkan logika kalkulasi sisa tagihan (amount due).
+Kamis	16 Juli 2026	- Daily Standup               
+- Menambahkan konfigurasi default pengurutan (sortBy & sortOrder) pada halaman daftar revisi dan memperbarui pemetaan status filter.
+- Mengimplementasikan kolom penguncian bank dan metode deposit ""via admin"" untuk skenario revisi setor tunai (cash after setor).
+- Memperbaiki penanganan berkas bukti pembayaran, pembaruan daftar revisi setelah aksi setuju/tolak, serta perbaikan modal pada tombol ""Revisi Sekarang"".
+Jumat	17 Juli 2026	- Daily Standup               
+- Merefaktor halaman detail revisi dengan memisahkan detail pembayaran dan memindahkan endpoint POST revisi ke  rute baru (/payment-revision).
+- Menampilkan alasan revisi pada kartu daftar pelanggan dan menampilkan nama pelanggan pada halaman detail revisi.
+- Menambahkan komponen pemilih tanggal (date picker) untuk seluruh tipe pembayaran.
+- Memperbaiki log aktivitas agar mengacu pada payment-revision, alokasi data footer menggunakan afterSnapshot, dan titik awal batch payload.
+Senin	20 Juli 2026	- Daily Standup               
+- Mengimplementasikan batasan perubahan tipe pembayaran dari non-tunai ke tunai beserta visualisasi tooltip penjelasannya.
+- Menambahkan panduan unggah berkas (file upload guide) beserta batasan ukuran berkas pada modal revisi.
+- Memperbaiki validasi tanggal pembayaran saat penyimpanan, reset tanggal dari non-transfer ke transfer, pewarnaan badge status revisi, serta parameter isUserCashReceiver pada cash setelah setor.
+- Mengoptimalkan payload pengajuan revisi dengan menghapus parameter ekstra ketika tipe pembayaran diubah dari tunai.
+Selasa	21 Juli 2026	- Memperbaiki alur revisi kas sebelum setor (cash before setor) dengan menghapus parameter idUserCashReceiver dan memastikan status setor tetap bertahan setelah menambah pembayaran non-tunai.
+- Menjaga persistensi nama pelanggan dan nomor invoice dari data pembayaran pada alur revisi setor tunai.
+Rabu	22 Juli 2026	- Mengimplementasikan IndexedDB untuk mempertahankan berkas bukti pembayaran pada alur revisi setor tunai dan menghapus memo ID pembayaran agar tetap kosong.
+- Memperbaiki penanganan draft pembayaran baru, alur setor tunai, serta kesalahan perpanjangan berkas bukti transfer.
+- Menambahkan fitur pencarian dengan query, menaikkan batas area hingga 50, dan menerapkan infinite scroll pada pemilihan area koleksi.
+Kamis	23 Juli 2026	- Menghapus efek reset halaman yang terlalu agresif pada wizard pembuatan koleksi (create collection).
+- Menambahkan filter wajib (forcing filter) untuk plant saat ini dan menonaktifkan multiselect pada daftar piutang tercatat (noted receivable list).
+- Menambahkan indikator loading spinner pada dropdown single-select untuk area dan kolektor.
+Jumat	24 Juli 2026	- Mengimplementasikan server-side search dan infinite scroll pada daftar pelanggan kolektor (customer collector list) untuk optimasi performa penarikan data.
+Senin	27 Juli 2026	- Memperbaiki alur revisi pembayaran: menambahkan validasi setoran kas pada alur setor, menyertakan pembayaran berstatus accepted ke dalam payload builder, dan mengunci pembayaran pertama sebagai anchor revisi.
+- Memperbaiki status unduhan file upload saat mengedit data lain serta error perpanjangan berkas bukti transfer.
+- Menambahkan tooltip penjelas pada tombol aksi disabled di detail pembayaran serta merapikan kolom daftar invoice dengan menambahkan status isActive dan nilai tagihan saat ini.
+Selasa	28 Juli 2026	- Mengintegrasikan filter pencarian berdasarkan nama kolektor dan nomor rekening bank di sisi frontend dan backend.
+- Menambahkan opsi filter FAR Netral pada daftar koleksi.
+- Memperbaiki alur revisi setor tunai: mempertahankan file bukti pada pembayaran baru, mengambil data koleksi untuk melengkapi informasi setor, dan membuka kunci pilihan bank saat beralih dari non-tunai ke tunai.
+Rabu	29 Juli 2026	- Menyelaraskan urutan data revisi agar memprioritaskan urutan pembayaran langsung dari backend.
+- Menghapus tombol ""Lihat Detail"" pada halaman revisi FAR saat status tertentu, serta menghapus pengalihan (redirect) otomatis ke halaman setor tunai pada kartu pelanggan koleksi.
+Kamis	30 Juli 2026	- Menangani dan menyelesaikan tiket bantuan operasional harian ParaPay, serta melakukan pengecekan dan perbaikan data transaksi secara manual pada database untuk memastikan kelancaran operasional cabang DC/RDC.
+Jumat	31 Juli 2026	- Menangani dan menyelesaikan tiket bantuan operasional harian ParaPay, serta melakukan pengecekan dan perbaikan data transaksi secara manual pada database untuk memastikan kelancaran operasional cabang DC/RDC.
+Senin	03 Agustus 2026	- Menangani dan menyelesaikan tiket bantuan operasional harian ParaPay, serta melakukan pengecekan dan perbaikan data transaksi secara manual pada database untuk memastikan kelancaran operasional cabang DC/RDC.
+Selasa	04 Agustus 2026	- Memulai pengembangan fitur revisi dengan menambahkan opsi status ""Gagal Tagih"" khusus untuk skenario pembayaran tunggal (single payment).
+Rabu	05 Agustus 2026	- Menambahkan sistem proteksi (guard) untuk invoice yang memiliki multi-payment pada alur revisi.
+- Menambahkan daftar izin ekstensi (whitelist) unggahan file pada revisi cash after setor dan mengotomatisasi penutupan (collapse) detail setelah menyimpan pembayaran sebagai gagal tagih.
+Kamis	06 Agustus 2026	- Menangani dan menyelesaikan tiket bantuan operasional harian ParaPay, serta melakukan pengecekan dan perbaikan data transaksi secara manual pada database untuk memastikan kelancaran operasional cabang DC/RDC.
+Jumat	07 Agustus 2026	- Menangani dan menyelesaikan tiket bantuan operasional harian ParaPay, serta melakukan pengecekan dan perbaikan data transaksi secara manual pada database untuk memastikan kelancaran operasional cabang DC/RDC.
+Senin	10 Agustus 2026	- Menangani dan menyelesaikan tiket bantuan operasional harian ParaPay, serta melakukan pengecekan dan perbaikan data transaksi secara manual pada database untuk memastikan kelancaran operasional cabang DC/RDC.
+Selasa	11 Agustus 2026	- Memulai implementasi modul penerimaan (admin-receipt) dengan membuat konfigurasi role baru serta hak akses (permission) khusus untuk pengelolaan kuitansi pembayaran.

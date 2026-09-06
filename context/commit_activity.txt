@@ -1,0 +1,477 @@
+Here is my raw commit history from my Merge Requests (since 6/2/2026). Please write my daily log/timesheet based on this:
+
+# Project: Parapay Frontend (78225476)
+
+## Merge Request: feat(payer-configuration): [DS45-609] integrate payer configuration page
+Merged Date: 9/2/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [9/1/2026] feat(payer): integrate payer configuration page
+
+---
+
+## Merge Request: feat(receipt-submission): [DS45-596] integrate receipt submission list api
+Merged Date: 9/1/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [9/1/2026] feat(receipt): integrate receipt submission page
+- [9/1/2026] feat(receipt): add receipt submission list api module
+- [9/1/2026] feat(receipt): support row click and custom empty message in DataTable
+
+---
+
+## Merge Request: feat(settings): [DS45-609] add payer configuration
+Merged Date: 8/24/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [8/24/2026] fix(payer): remove isPilot and move toggle to action button
+- [8/24/2026] style(payer): remove expired banner
+- [8/21/2026] feat(payer): wire payer navigation and route
+- [8/21/2026] feat(payer): add payer list page with mock data
+- [8/21/2026] feat(payer): add settings.payer view/update slugs
+- [8/21/2026] feat(payer): add payer list and update hooks
+
+---
+
+## Merge Request: feat(revision): [DS45-552] add bypass check of overallocation in non allocation
+Merged Date: 8/20/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [8/19/2026] feat(revision): add bypass check of overallocation in non allocation
+
+---
+
+## Merge Request: feat(revision): [DS45-552] add check for covered invoice from existing payment to
+Merged Date: 8/19/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [8/19/2026] feat(revision): add check for covered invoice from existing payment to
+
+---
+
+## Merge Request: feat(revision): [DS45-552] add gagal tagih to single payment
+Merged Date: 8/18/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [8/5/2026] feat(revision): add guard for invoice with multipayment
+- [8/5/2026] feat(revision): add whitelist of fil eupload for cash after setor,
+- [8/5/2026] feat(revision): collapsed detail after saving payment to gagal taigh
+- [8/4/2026] feat(revision): add gagal tagih option if its a single payment
+
+---
+
+## Merge Request: feat(receipt): [DS45-596] [DS45-590] make action button icon only
+Merged Date: 8/14/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [8/14/2026] refactor(receipt): make action button icon only
+
+---
+
+## Merge Request: feat(admin-receipt): [DS45-560] add new role and permission of receipt
+Merged Date: 8/12/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [8/12/2026] fix(admin-receipt): remove export and add guard for export permission
+- [8/12/2026] fix(admin-receipt): adjust submission slug to match backend slug
+- [8/12/2026] feat(admin-receipt): add receipt submisison
+- [8/11/2026] feat(admin-receipt): add new role and permission of receipt
+
+---
+
+## Merge Request: fix(revision): [DS45-514] fix revision flow
+Merged Date: 7/29/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/29/2026] fix(revision): fix ordering to primrarily use payment order from backend
+
+---
+
+## Merge Request: fix(revision): [DS45-514] fix cash revision flow
+Merged Date: 7/29/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/29/2026] fix(revision): remove lihat detail in far revision page when the status
+- [7/29/2026] fix(revision): remove setor page redirect from the non-cash to cash
+- [7/29/2026] fix(revision): remove auto redirect to setor page in collection customer
+
+---
+
+## Merge Request: fix(revision): [DS45-514] fix cash revision flow
+Merged Date: 7/28/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/28/2026] fix(revision): persist file in newly added payment in cash after setor
+- [7/28/2026] feat(revision): add fetch collection to fill extra data when setor
+- [7/28/2026] fix(revision): unlocked bank dropdown for non cash to cash
+- [7/28/2026] fix(revision): restore reverted changes
+- [7/27/2026] fix(revision): check cash deposit for setor flow
+- [7/27/2026] fix(revision): add accepted payment in payload builder for revision
+- [7/27/2026] fix(revision): persist first payment with revision status as anchor for
+- [7/27/2026] fix(revision): fix tf payment extend file error
+- [7/27/2026] fix(revision): fix file upload downloading state when editing other
+- [7/22/2026] chore(revision): remove logging of idb
+- [7/22/2026] feat(revision): add indexedDB to persist bukti file in cash after setor
+- [7/22/2026] fix(revision): make sure that card payment header amount is the same
+- [7/22/2026] fix(revision): remove memo in id payment so that it still stays empty
+- [7/22/2026] fix(revision): fix tf payment extend file error
+- [7/22/2026] fix(revision): fix handling new draft payments, setor flow, and invoice
+
+---
+
+## Merge Request: feat(collection-list): [DS-1] add far netral option in filter by collector
+Merged Date: 7/28/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/28/2026] feat(collection-list): add far netral option in filter by collector
+
+---
+
+## Merge Request: feat(payment-list): [DS-1] add filter by collector name and bank account
+Merged Date: 7/28/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/28/2026] feat(payment-list): add filter by collector name and bank account
+
+---
+
+## Merge Request: fix(payment-detail): [DS-1] add new disabled hover tooltip that suggest to accept the previous payment
+Merged Date: 7/27/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/27/2026] fix(payment-detail): add new disabled hover tooltip that suggest to
+
+---
+
+## Merge Request: fix(list-invoice): [DS-1] remove customerPayer and TOP in list, add isActive status and current amount in list
+Merged Date: 7/27/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/27/2026] fix(list-invoice): remove customerPayer and top in list, add isActive
+
+---
+
+## Merge Request: fix(customer-collector-list): [DS-1] add infinite scroll in collector customer list
+Merged Date: 7/24/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/24/2026] feay(customer-collector-list): add server-side search + infinite scroll
+
+---
+
+## Merge Request: fix(create-collection): [DS-1] remove aggressive reset effect in create collection wizard
+Merged Date: 7/23/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/23/2026] fix(create-collection): remove overly agressive page reset on create
+
+---
+
+## Merge Request: feat(noted-receivable-list): [DS-1] add forcing filter to current plant and disable multiselect on the filter
+Merged Date: 7/23/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/23/2026] feat(noted-receivable-list): add forcing filter to current plant and
+
+---
+
+## Merge Request: feat(collection): [DS-1] add loading spinner in single select dropdown of area and colelctor
+Merged Date: 7/23/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/23/2026] feat(collection): add loading spinner in single select dropdown of area
+
+---
+
+## Merge Request: fix(collection): [DS-1] add limit of area search to 50 and have infinite scroll
+Merged Date: 7/22/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/22/2026] feat(collection): add search query, increase limit to 50, and infinite
+- [7/22/2026] fix(collection): add limit of area search to 50 and have infinite scroll
+
+---
+
+## Merge Request: fix(revision): [DS45-514] fix cash before setor revision flow
+Merged Date: 7/22/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/22/2026] fix(revision): remove memo in id payment so that it still stays empty
+- [7/22/2026] fix(revision): fix tf payment extend file error
+- [7/22/2026] fix(revision): fix handling new draft payments, setor flow, and invoice
+- [7/21/2026] fix(revision): persist setor after adding non cash payment
+- [7/21/2026] fix(revision): remove idUserCashReceiver for cash before setor
+- [7/21/2026] fix(revision): change null to empty string
+
+---
+
+## Merge Request: fix(revision): [DS45-514] fix cash before setor revision flow
+Merged Date: 7/21/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/21/2026] fix(revision): persist setor after adding non cash payment
+- [7/21/2026] fix(revision): remove idUserCashReceiver for cash before setor
+- [7/21/2026] fix(revision): change null to empty string
+
+---
+
+## Merge Request: fix(revision): [DS45-514] fix cash after setor revision flow
+Merged Date: 7/21/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/21/2026] feat(revision): persist Customer Name and Invoice Number from payment
+
+---
+
+## Merge Request: fix(revision): [DS45-514] fix revision flow for far payment bill
+Merged Date: 7/20/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/20/2026] feat(revision): add file upload guide and file size
+- [7/20/2026] fix(revision): remove extra payload when changing payment type from cash
+- [7/20/2026] fix(revision): cash after setor missing isUserCashReceiver
+
+---
+
+## Merge Request: feat(revision): [DS45-514] add revision flow for far payment bill
+Merged Date: 7/18/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/18/2026] fix(revision): add payment date check when saving a payment
+- [7/18/2026] fix(revision): add date reset if changing frmo non transfer to transfer
+- [7/18/2026] feaet(revision): add clickable tooltip to show the restriction of
+- [7/18/2026] style(revision): fix status badge coloring in revision collection
+- [7/18/2026] fix(revision): change destructuring of revision reason in far revision
+- [7/18/2026] feat(revision): add the restriction of non-cash to cash if there are
+- [7/17/2026] feat(revision): add revision reason in collection customer list card
+- [7/17/2026] feat(revision): use revision list and updated the status mapping
+- [7/17/2026] feat(revision): add customer name in revision detail
+- [7/17/2026] feat(payment): add paymetn date picker for all payment type
+- [7/17/2026] refactor(revision): remove payment detail from revision detail page and
+- [7/17/2026] fix(revision): use activity log from payment-revision instead from
+
+---
+
+## Merge Request: feat(revision): [DS45-514] add revision flow for far payment bill
+Merged Date: 7/17/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/17/2026] fix(revision): use afterSnapshot allocations in revision data footer,
+- [7/17/2026] refactor(revision): switch POST revision to /payment-revision and admin
+- [7/17/2026] fix(revision): start payload batch from anchor position instead of index
+- [7/16/2026] feat(revision): add fixed sortBy and sortOrder in revision list page
+- [7/16/2026] fix(revision): added status mapping for downstream filter to exclude
+- [7/16/2026] feat(revision): add lock bank field for cash after setor and fix
+- [7/16/2026] fix(revision): bukti file handling in cash after setor revision
+- [7/16/2026] fix(revision): fix locked deposit method to via admin at cash after
+- [7/16/2026] fix(revision): fix stale revision list after approve/decline action
+- [7/16/2026] fix(revision): remove idPaymentRevSource linking
+- [7/16/2026] fix(revision): fix revisi sekarang showing the wronf modal after
+- [7/15/2026] fix(revision): invalid retur edit and hardcode tolak bayar subtype
+- [7/15/2026] fix(revision): remove gagal tagih payment when there's kurang payment
+- [7/15/2026] Merge main into feat/DS45-514/revision-flow
+- [7/15/2026] fix(revision): change payments fetchers for revision
+- [7/15/2026] feat(revision): add gagal tagih modal for unallocated invoices and add
+- [7/15/2026] fix(revision): remove logging for sisa calculation
+- [7/15/2026] feat(revision): integrate the accept and decline button to the new
+
+---
+
+## Merge Request: feat(revision): [DS45-514] add revision flow for far payment bill
+Merged Date: 7/16/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/16/2026] feat(revision): add lock bank field for cash after setor and fix
+- [7/16/2026] fix(revision): bukti file handling in cash after setor revision
+- [7/16/2026] fix(revision): fix locked deposit method to via admin at cash after
+- [7/16/2026] fix(revision): fix stale revision list after approve/decline action
+- [7/16/2026] fix(revision): remove idPaymentRevSource linking
+- [7/16/2026] fix(revision): fix revisi sekarang showing the wronf modal after
+- [7/15/2026] fix(revision): invalid retur edit and hardcode tolak bayar subtype
+- [7/15/2026] fix(revision): remove gagal tagih payment when there's kurang payment
+- [7/15/2026] Merge main into feat/DS45-514/revision-flow
+- [7/15/2026] fix(revision): change payments fetchers for revision
+- [7/15/2026] feat(revision): add gagal tagih modal for unallocated invoices and add
+- [7/15/2026] fix(revision): remove logging for sisa calculation
+- [7/15/2026] feat(revision): integrate the accept and decline button to the new
+- [7/15/2026] fix(revision): modified robust amount due calculation
+- [7/15/2026] feat(revision): make the cash after setor edit to goes to the setor page
+- [7/15/2026] feat(revision): add customer list and adjust payload to new endpoint
+- [7/15/2026] feat(revision): add collection customer grouping logic in revision for
+- [7/15/2026] feat(revision): add gagal tagih modal for unallocated invoices and add
+- [7/14/2026] fix(revision): remove logging for sisa calculation
+
+---
+
+## Merge Request: feat(revision): [DS45-514] add revision flow for far payment bill
+Merged Date: 7/13/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/13/2026] feat(revision): add pending state in customer list and handle bukti
+- [7/13/2026] feat(revision): add gagal tagih in payload for revision
+- [7/11/2026] fix(revision): temporary cash revisionflow
+- [7/10/2026] feat(revision): exlude payment with done status from the payload
+- [7/10/2026] fix(revision): keep done and draft payment status to have the same memo
+- [7/9/2026] feat(revision): add the logic the only keep memo if its non allocation
+- [7/9/2026] feat(revision): add thousand separator in currency input
+- [7/9/2026] feat(revision): add filter for collection id when opening collection
+- [7/9/2026] feat(revision): make the cash after setor edit to goes to the setor page
+- [7/9/2026] fix(revision): fix locked status for payment in revision editor
+- [7/9/2026] feat(revision): add customer list and adjust payload to new endpoint
+- [7/8/2026] feat(revision): add sorting in /far/home collection summary by store
+- [7/7/2026] feat(revision): add collection customer grouping logic in revision for
+- [7/7/2026] feat(revision): add request revision for "Ajukan Revisi" status in far
+- [7/7/2026] fix(revision): reset state when adding a new payment to handle duplicate
+
+---
+
+## Merge Request: feat(bills-cut): [DS45-518] status in potong tagihan list and detail
+Merged Date: 7/7/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/7/2026] feat(bills-cut): use global status badge instead of potong tagihan
+- [7/7/2026] feat(bills-cut): change argument to get the payment status
+- [7/6/2026] feat(bills-cut): add potag status badge and disabled state for update
+
+---
+
+## Merge Request: feat(bills-cut): [DS45-518] status in potong tagihan list and detail
+Merged Date: 7/7/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/7/2026] feat(bills-cut): change argument to get the payment status
+- [7/6/2026] feat(bills-cut): add potag status badge and disabled state for update
+
+---
+
+## Merge Request: feat(revision): [DS45-514] add revision flow for far payment bill
+Merged Date: 7/6/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/6/2026] ref(revision): remove unuseud revision v1 and set revision-v2 to be the
+- [7/6/2026] ref(revision): breakdown editor page to be more modular
+- [7/6/2026] fix(revision): add invalidate to refresh revision
+- [7/6/2026] fix: netral revision modal file handling and per-customer amount
+- [7/6/2026] fix(upload-payment): [DS-1] duplicate input total payment amount
+- [7/6/2026] feat(collection-detail): [DS-1] add select all for table customer
+- [7/6/2026] fix(upload-payment): [DS-1] ambigous validation
+- [7/6/2026] fix(create-collection): [DS-1] navigation create collection
+- [7/5/2026] feat(revision): add setor cash flow when adding new cash payment
+- [7/3/2026] feat(revision): add accepted status in the revision label
+- [7/3/2026] modified(revision): change rev source argument to be on the rejected
+- [7/3/2026] feat(revision): revision non allocation lock and contiguous add payment
+- [7/3/2026] feat(revision): add read only mode for "menunggu admin" status
+- [7/3/2026] fix(revision): change approve to accept in payment revision detail
+- [7/3/2026] fix(revision): modified revision list fetch and tolak koleksi status arg
+- [7/3/2026] feat(revision): add tambah button lock for non allocation changes
+- [7/3/2026] modified(revision): change rev source argument to be on the rejected
+
+---
+
+## Merge Request: feat(bills-cut): [DS45-518] detail potong tagihan and missing progress modal in far collection
+Merged Date: 7/2/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/1/2026] modified(bills-cut): remove the suffix of list in potong tagihan url
+- [6/30/2026] fix(bills-cut): update column in detail potong tagihan
+- [6/30/2026] fix(bills-cut): add minor details and fixes in potong tagihan page
+- [6/29/2026] feat(bills-cut): add missing progress modal for far netral collection
+- [6/29/2026] feat(bills-cut): add collector name and memo in potong tagihan detail
+- [6/26/2026] refactor(bills-cut): add missing progress modal warning in create
+- [6/26/2026] feat(bills-cut): add potong tagihan action column, route, and detail
+- [6/26/2026] feat(bills-cut): add endpoint integrations and query hooks for potong
+
+---
+
+## Merge Request: fix(far-payment): [DS45-484] fix save as draft gagal tagih case
+Merged Date: 6/19/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [6/19/2026] fix(draft): fix failed draft save after gagal tagih and restore draft on
+- [6/16/2026] fix(draft): add useCollection in far Collection bayarTagihan
+
+---
+
+## Merge Request: fix(draft): [DS45-484] fix overwritten draft when adding payment from multiple customer
+Merged Date: 6/17/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [6/16/2026] fix(draft): add useCollection in far Collection bayarTagihan
+
+---
+
+## Merge Request: feat(payment-bill): [DS45-494] render disabled cash payment type in far bayar tagihan
+Merged Date: 6/17/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+
+---
+
+## Merge Request: feat(draft): [DS45-484] add draft edit logic in far reguler collection detail
+Merged Date: 6/11/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+
+---
+
+# Project: Parapay Backend (78190401)
+
+## Merge Request: feat(receipt-submission): [DS45-597] add receipt submission list endpoint
+Merged Date: 9/1/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [9/1/2026] test(receipt): cover listSubmissions with unit test
+- [9/1/2026] feat(receipt): expose get /receipt/submission endpoint
+- [9/1/2026] feat(receipt): add listSubmissions service
+- [9/1/2026] feat(receipt): add submission list index
+- [8/31/2026] chore(sap-inbound): [DS45-622] REVERT resolve AR residual customerId and restrict submit to pending/failed
+- [8/31/2026] fix(sap-inbound): [DS45-622] resolve AR residual customerId and restrict submit to pending/failed
+
+---
+
+## Merge Request: feat(payment-list): [DS-1] add filter for collector name and bank account
+Merged Date: 7/28/2026
+Description: ## What does this MR do and why?
+
+### Granular Commits:
+- [7/28/2026] feat(payment-list): add filter for collector name and bank account
+
+---
+
