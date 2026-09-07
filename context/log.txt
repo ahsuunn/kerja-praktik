@@ -1,3 +1,5 @@
+This document serves regarding my Work Identity and environment
+
 Selasa	02 Juni 2026	Onboarding HR, Setup email paragon, akun gitlab
 Rabu	03 Juni 2026	Onboarding tim FATL, Setup VPN, Mempelajari Sistem yang ada di dalam FATL
 Kamis	04 Juni 2026	Mempelajari Sistem yang ada di dalam FATL
