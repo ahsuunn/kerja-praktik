@@ -9,6 +9,8 @@ manage multi-payment of the collection and residual
 collect and deposit customer's payment
 revise and edit payment in a collection
 
+Sudah terdapat aplikasi Parapay sebelumnya yang dibuat menggunakan PHP namun, untuk pengembangan ini dibuat ulang menggunakan framework modern yaitu Javascript.
+
 Parapay terintegrasi dengan SAP untuk mengambil invoice dan memasukkannya ke Parapay untuk diselesaikan dan kemudian akan dikembalikan lagi ke dalam SAP sebagai kontrol utama dari Invoice. 
 
 SAP (System Applications and Products in Data Processing) adalah platform ERP (Enterprise Resource Planning) yang digunakan untuk mengelola berbagai proses bisnis di perusahaan.
@@ -38,3 +40,9 @@ Invoice dapat teralokasi secara penuh, parsial, atau jika tidak memiliki alokasi
 
 Setelah payment selesai, FAR dapat mensubmit paymentnya, dan payment tersebut akan muncul di menu Admin AR. 
 Admin AR dapat menolak paymentnya dan membuat FAR merevisi ulang paymentnya, kasus yang umum terjadi adalah nominal yang tidak sesuai ataupun tanggal pembayaran yang tidak sesuai. Jika sesuai maka FAR dapat menyetujui paymentnya dan dapat menambahkan debit/credit untuk payment jika terdapat kekurangan atau kelebihan sedikit dari payment.
+
+Terkhusus payment cash, dalam satu collection hanya bisa terdapat satu payment cash yang dapat terdiri dari beberapa customer. Payment cash harus melalui proses setor terlebih dahulu (via Admin/Bank) agar dapat muncul di halaman Admin AR dan dapat disetujui/ditolak oleh Admin AR.
+
+Khusus untuk pembayaran cash, sebelum melakukan setor tunai FAR dapat mengajukan revisi terlebih dahulu jika terdapat kekeliruan.
+
+Untuk revisi payment cash yang sudah setor akan terdapat alur terpisah ketika merevisi, yaitu untuk payment tersebut akan digrouping seluruh customer yang teralokasi invoicenya dari payment tersebut. Sehingga constraint payment cash yang hanya bisa satu di dalam satu collection tetap terjaga integritasnya.

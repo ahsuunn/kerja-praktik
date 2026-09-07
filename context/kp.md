@@ -16,7 +16,18 @@ Budget Management: TFM dan MARS
 Receivable: ParaPay, Debit Note, Customer Claim, Transfer PTI, SOANG, Tax Calculator
 Payable: SCM Portal -> Web Tukar Faktur, KOL Invoicing, CASH.
 
-
 Stream FATL dipimpin oleh Joeken King Abednego Judianto.
 
+Tim Parapay terdiri dari: 
+Joeken King Abednego Judianto - Lead Stream FATL
+Arief Rahman - Semi Lead Parapay and Dedicated Backend Developer
+Ananta Ihza - Dedicated Frontend Developer and a Bit of backend Developer
+Ahsan (Me) - Dedicated Frontend Developer and a Bit of backend Developer
+Tri Jaka Pamungkas - Dedicated Mobile Frontend Developer
+Syanara Aulia - Main Project Manager
+Indita Ramashapira - Project Manager from Other app that keeps in contact with the group
+Rika Nuriwati - SAP Admin
+
 Parapay App is lead by Arief Rahman (my project mentor, not the official mentor written on paper) who i which communicate with regularly regarding the project technical details.
+
+Paragon sudah menggunakan AI Native SDLC sehingga seluruh developer dibantu dengan AI. AI yang disediakan oleh Paragon adalah API Key Deepseek dan digunakan menggunakan melalui OpenCode dan disarankan menggunakan Open Agent Orchestration (OAC).
