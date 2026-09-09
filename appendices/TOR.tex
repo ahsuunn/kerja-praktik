@@ -6,43 +6,101 @@
 \begin{center}
 {\bfseries\Large TERM OF REFERENCE (TOR)\par}
 {\bfseries\large PENGEMBANGAN FUNGSI MANAJEMEN PENAGIHAN PIUTANG DAN ALUR REVISI PEMBAYARAN PARAPAY\par}
-\vspace{0.3cm}
+\vspace{0.2cm}
 \textbf{PT PARAGON TECHNOLOGY AND INNOVATION}
 \end{center}
-\vspace{0.4cm}
+\vspace{0.3cm}
 
-\begin{enumerate}[label=\arabic*.,leftmargin=1.0cm]
-\item \textbf{TUJUAN PEKERJAAN}\\
-  Mengembangkan dan mengoptimalkan fungsi aplikasi Parapay dalam mengelola penagihan piutang usaha (\textit{Account Receivable}), memfasilitasi alur simpan sementara (\textit{Save as Draft}), merefaktor arsitektur alur revisi pembayaran (Revision v2) dengan pemuatan data lama secara otomatis, serta mendukung stabilitas operasional penagihan di seluruh cabang distribusi.
+\textit{Term of Reference} (TOR) ini merupakan dokumen acuan kerja yang menetapkan tujuan, batasan, metodologi, dan pembagian tanggung jawab dalam pelaksanaan Kerja Praktik pengembangan aplikasi Parapay di PT Paragon Technology and Innovation.
 
-\item \textbf{LINGKUP PEKERJAAN}\\
-  \begin{enumerate}[label=\alph*)]
+\begin{enumerate}[label=\arabic*.,leftmargin=0.8cm,itemsep=8pt,topsep=4pt,parsep=0pt,partopsep=0pt]
+\item \textbf{TUJUAN PEKERJAAN}\par\vspace{2pt}
+  Mengembangkan, merefaktor, dan mengoptimalkan fungsi aplikasi Parapay (sistem manajemen dan penagihan piutang usaha / \textit{Account Receivable}) berbasis JavaScript/TypeScript yang terintegrasi dua arah dengan SAP ERP. Tujuan utama pekerjaan meliputi implementasi alur simpan sementara (\textit{Save as Draft}), perancangan ulang arsitektur revisi pembayaran (Revision v2) dengan pemuatan otomatis data lama, integrasi penyimpanan bukti transfer luring berbasis \textit{IndexedDB}, serta dukungan stabilitas operasional di 28 pusat distribusi (\textit{Distribution Center / Regional Distribution Center} atau DC/RDC) nasional.
+
+\item \textbf{LINGKUP PEKERJAAN}
+  \begin{enumerate}[label=\alph*),topsep=2pt,itemsep=2pt,parsep=0pt,partopsep=0pt,leftmargin=0.5cm]
     \item Pengembangan antarmuka dan logika \textit{Save as Draft} pada alur pembuatan koleksi penagihan.
-    \item Pembuatan modul Potong Tagihan dengan indikator status dinamik dan pengendalian hak akses (RBAC).
-    \item Refactoring arsitektur Revision v1 menjadi Revision v2 yang mendukung pemuatan otomatis data lama, \textit{state invalidation}, mode \textit{read-only}, \textit{non-allocation lock}, dan alur khusus setor tunai.
-    \item Integrasi API peramban \textit{IndexedDB} untuk penyimpanan bukti transfer secara luring.
-    \item Optimasi antarmuka melalui \textit{server-side search} dan \textit{infinite scroll} pada daftar pelanggan dan area penagihan.
-    \item Penyelesaian tiket bantuan operasional dan pemeliharaan basis data produksi pasca \textit{Go Live}.
+    \item Rekonsiliasi 7 tipe pembayaran (Tunai, Transfer Bank, Bilyet Giro, Potong Tagihan, Tukar Faktur, Retur, dan Nota Debit/Kredit).
+    \item Pembuatan modul Potong Tagihan dengan indikator status dinamik dan pengendalian hak akses (\textit{Role-Based Access Control} / RBAC).
+    \item Refactoring arsitektur Revision v1 menjadi Revision v2 yang mendukung pemuatan otomatis data lama, \textit{state invalidation}, mode \textit{read-only}, \textit{non-allocation lock}, serta alur khusus setor tunai (\textit{Cash Before Setor} dan \textit{Cash After Setor}).
+    \item Integrasi API peramban \textit{IndexedDB} untuk penyimpanan bukti transfer secara luring di sisi klien.
+    \item Optimasi antarmuka melalui \textit{server-side search} dan \textit{infinite scroll} pada penarikan data area dan pelanggan berskala besar (>50 entri).
+    \item Penanganan tiket bantuan operasional harian dan eksekusi skrip perbaikan data (\textit{data patch}) pada basis data produksi.
   \end{enumerate}
 
-\item \textbf{HASIL PEKERJAAN}\\
-  Modul aplikasi Parapay yang teruji dan terintegrasi ke repositori utama PT Paragon Technology and Innovation, beserta dokumen laporan Kerja Praktik.
-
-\item \textbf{BATASAN}\\
-  \begin{enumerate}[label=\alph*)]
-    \item Pengembangan difokuskan pada \textit{frontend framework} berbasis React/TypeScript dan integrasi API \textit{backend}.
-    \item Pengujian dilakukan pada lingkungan \textit{staging} dan basis data produksi secara terkontrol bersama pembimbing teknis.
+\item \textbf{HASIL PEKERJAAN}
+  \begin{enumerate}[label=\alph*),topsep=2pt,itemsep=2pt,parsep=0pt,partopsep=0pt,leftmargin=0.5cm]
+    \item Modul aplikasi Parapay yang teruji, terintegrasi, dan berhasil digabungkan (\textit{merged}) ke dalam repositori utama PT Paragon Technology and Innovation.
+    \item Penutupan tiket bantuan operasional dan pemulihan integritas data transaksi pada 28 DC/RDC.
+    \item Laporan Kerja Praktik dan dokumentasi teknis sistem.
   \end{enumerate}
 
-\item \textbf{LINGKUNGAN PENGEMBANGAN}\\
-  \begin{itemize}
-    \item \textbf{Perangkat Lunak}: Node.js, React, TypeScript, TanStack Query, Zustand, Git, OpenCode, Zathura.
+\item \textbf{BATASAN}
+  \begin{enumerate}[label=\alph*),topsep=2pt,itemsep=2pt,parsep=0pt,partopsep=0pt,leftmargin=0.5cm]
+    \item \textbf{Batasan Bisnis}: Dalam satu koleksi penagihan hanya boleh terdapat tepat 1 entri pembayaran tunai. Pembayaran tunai wajib melalui proses Setor Tunai sebelum dapat disetujui Admin AR.
+    \item \textbf{Batasan Integrasi}: Master data faktur dan pencatatan buku besar akhir dikontrol secara terpusat oleh SAP ERP.
+    \item \textbf{Batasan Lingkungan}: Pengembangan antarmuka difokuskan pada \textit{framework} React dan TypeScript, pengujian dilakukan pada lingkungan \textit{staging}, dan perbaikan data produksi dilakukan bersama pembimbing teknis.
+  \end{enumerate}
+
+\item \textbf{ASUMSI}
+  \begin{enumerate}[label=\alph*),topsep=2pt,itemsep=2pt,parsep=0pt,partopsep=0pt,leftmargin=0.5cm]
+    \item Ketersediaan akses jaringan internal ParagonCorp via VPN dan akses repositori GitLab perusahaan.
+    \item Ketersediaan \textit{endpoint} API SAP ERP dan basis data \textit{staging} yang stabil untuk pengujian integrasi.
+    \item Ketersediaan kunci akses model kecerdasan buatan (DeepSeek API via OpenCode) untuk mendukung alur kerja \textit{AI-Native SDLC}.
+  \end{enumerate}
+
+\item \textbf{METODOLOGI PEKERJAAN}
+  \begin{enumerate}[label=\roman*.,topsep=2pt,itemsep=2pt,parsep=0pt,partopsep=0pt,leftmargin=0.5cm]
+    \item \textbf{Penjelasan Metodologi}: Menggunakan pendekatan \textit{Agile Software Development} dengan koordinasi harian (\textit{Daily Standup}), peninjauan kode (\textit{Merge Request}), dan rilis bertahap.
+    \item \textbf{Pemetaan Tahap Pelaksanaan}:
+    \begin{itemize}[topsep=2pt,itemsep=2pt,parsep=0pt,partopsep=0pt,leftmargin=0.4cm]
+      \item \textit{Tahap Inisiasi} (Minggu 1): Onboarding HR \& tim FATL, setup lingkungan pengembang, VPN, dan analisis sistem Parapay.
+      \item \textit{Tahap Pengembangan Modul Awal} (Minggu 2--4): Fitur \textit{Save as Draft}, validasi tipe pembayaran FAR, dan modul Potong Tagihan.
+      \item \textit{Tahap Refactoring Arsitektur} (Minggu 5--7): Pembangunan Revision v2, \textit{non-allocation lock}, alur setor tunai, dan pemisahan \textit{endpoint} revisi.
+      \item \textit{Tahap Optimasi dan Luring} (Minggu 8): Integrasi \textit{IndexedDB} dan optimasi \textit{infinite scroll} / \textit{server-side search}.
+      \item \textit{Tahap Dukungan Operasional \& Dokumentasi} (Minggu 9--10): Penanganan tiket operasional DC/RDC, \textit{data patch} SQL, dan penyusunan laporan.
+    \end{itemize}
+  \end{enumerate}
+
+\item \textbf{LINGKUNGAN PENGEMBANGAN}
+  \begin{itemize}[topsep=2pt,itemsep=2pt,parsep=0pt,partopsep=0pt,leftmargin=0.5cm]
+    \item \textbf{Perangkat Keras}: Laptop pengembang (Arsitektur x86\_64, RAM 16 GB).
+    \item \textbf{Perangkat Lunak}: Node.js, React, TypeScript, TanStack Query, Zustand, Sequelize, Git, OpenCode, Zed / VS Code, Zathura.
     \item \textbf{Jaringan}: Paragon Internal Network via VPN.
   \end{itemize}
 
-\item \textbf{METODOLOGI PEKERJAAN}\\
-  Menggunakan pendekatan \textit{Agile Software Development} dalam lingkungan \textit{AI-Native SDLC} dengan siklus koordinasi mingguan mencakup \textit{Daily Standup}, pengulasan kode (\textit{Merge Request}), dan pemeliharaan operasional.
+\item \textbf{JADWAL KERJA}\par\vspace{2pt}
+  Pelaksanaan pekerjaan dirinci ke dalam 10 minggu kegiatan sebagaimana disajikan pada Tabel~\ref{tab:jadwal-kp} di Bab II laporan ini.
 
+\item \textbf{PENUGASAN STAF}
+  \begin{itemize}[topsep=2pt,itemsep=2pt,parsep=0pt,partopsep=0pt,leftmargin=0.5cm]
+    \item \textbf{Joeken King Abednego Judianto}: \textit{Lead Stream} FATL (Penanggung jawab keselarasan bisnis).
+    \item \textbf{Arief Rahman}: \textit{Semi Lead Parapay} \& \textit{Backend Lead} (Pembimbing teknis harian).
+    \item \textbf{Ahsan Malik Al Farisi} (Penulis): \textit{Frontend Developer} (Modul revisi, simpan draf, potong tagihan, dan \textit{IndexedDB}).
+    \item \textbf{Ananta Ihza}: \textit{Frontend Developer} (Modul penagihan dan antarmuka umum).
+    \item \textbf{Tri Jaka Pamungkas}: \textit{Mobile Frontend Developer}.
+    \item \textbf{Syanara Aulia} \& \textbf{Indita Ramashapira}: \textit{Project Manager}.
+    \item \textbf{Rika Nuriwati}: \textit{SAP Admin}.
+    \item \textbf{Tegar Satria Nurhuda}: Pembimbing resmi instansi.
+  \end{itemize}
+
+\item \textbf{MEKANISME PENGENDALIAN DAN PEMANTAUAN}
+  \begin{enumerate}[label=\alph*),topsep=2pt,itemsep=2pt,parsep=0pt,partopsep=0pt,leftmargin=0.5cm]
+    \item \textbf{Pertemuan Harian (\textit{Daily Standup})}: Pelaporan kemajuan harian, sinkronisasi tugas, dan identifikasi kendala (\textit{blocker}).
+    \item \textbf{Pengulasan Kode (\textit{Code Review})}: Setiap pembaruan kode wajib melalui peninjauan via GitLab \textit{Merge Request} sebelum digabungkan ke \textit{branch} utama.
+    \item \textbf{Pencatatan Aktivitas}: Seluruh rincian pekerjaan dicatat pada log aktivitas harian (\textit{Daily Log Activity}).
+  \end{enumerate}
+
+\item \textbf{MANAJEMEN RISIKO}
+  \begin{enumerate}[label=\alph*),topsep=2pt,itemsep=2pt,parsep=0pt,partopsep=0pt,leftmargin=0.5cm]
+    \item \textbf{Risiko Minimnya Dokumentasi Sistem Lama}: Diminimalkan dengan proaktif mengonfirmasi batasan bisnis harian kepada pembimbing teknis dan tim SAP.
+    \item \textbf{Risiko Ketergantungan API \textit{Backend}}: Diatasi dengan pembuatan \textit{mocking API} di sisi klien selama endpoint dalam proses pengerjaan.
+    \item \textbf{Risiko Regresi Kode pada \textit{AI-Native SDLC}}: Diatasi dengan pemecahan komponen menjadi modular dan pemeriksaan teliti terhadap \textit{git diff} sebelum komit.
+    \item \textbf{Risiko Anomali Basis Data Produksi}: Diatasi dengan eksekusi skrip \textit{data patch} SQL/Sequelize di bawah pengawasan langsung pembimbing teknis.
+  \end{enumerate}
+
+\item \textbf{LAIN-LAIN}\par\vspace{2pt}
+  Seluruh hasil pekerjaan, kode sumber, dan data transaksi bersifat rahasia dan tunduk pada kebijakan perlindungan data PT Paragon Technology and Innovation.
 \end{enumerate}
 
 \vspace{0.6cm}
@@ -58,3 +116,69 @@ Disetujui oleh,
 \end{tabular}
 \end{center}
 \end{framed}
+
+\clearpage
+\chapter*{Lampiran B. Catatan Aktivitas Harian Log Kerja Praktik}
+\addcontentsline{toc}{chapter}{Lampiran B. Catatan Aktivitas Harian Log Kerja Praktik}
+
+Berikut adalah catatan rincian aktivitas harian yang dilaksanakan oleh penulis selama 10 minggu masa Kerja Praktik di PT Paragon Technology and Innovation (2 Juni 2026 -- 11 Agustus 2026):
+
+\begin{center}
+\begin{longtable}{|p{2.0cm}|p{2.5cm}|p{8.5cm}|}
+\hline
+\textbf{Hari} & \textbf{Tanggal} & \textbf{Aktivitas Pekerjaan} \\
+\hline
+\endhead
+
+Selasa & 02 Juni 2026 & Onboarding HR, setup email Paragon, pembuatan akun GitLab perusahaan. \\ \hline
+Rabu & 03 Juni 2026 & Onboarding tim FATL, setup akses VPN internal, mempelajari sistem di FATL. \\ \hline
+Kamis & 04 Juni 2026 & Mempelajari alur bisnis dan sistem yang ada di dalam lingkungan FATL. \\ \hline
+Jumat & 05 Juni 2026 & Onboarding proyek Parapay, mempelajari arsitektur aplikasi penagihan Parapay. \\ \hline
+Senin & 08 Juni 2026 & Daily Standup, memulai pengerjaan fitur \textit{Save as Draft}. \\ \hline
+Selasa & 09 Juni 2026 & Daily Standup, melanjutkan implementasi logika fitur \textit{Save as Draft}. \\ \hline
+Rabu & 10 Juni 2026 & Daily Standup, pengerjaan penonaktifan tipe pembayaran kas tidak valid di penagihan. \\ \hline
+Kamis & 11 Juni 2026 & Menyelesaikan penonaktifan tipe pembayaran kas tidak valid pada form FAR. \\ \hline
+Jumat & 12 Juni 2026 & Daily Standup, pengujian dan penyempurnaan alur simpan draf penagihan. \\ \hline
+Senin & 15 Juni 2026 & Daily Standup, integrasi query hooks untuk penyimpanan draf penagihan. \\ \hline
+Rabu & 17 Juni 2026 & Daily Standup, memulai analisis dan pengembangan modul \textit{Revision Flow}. \\ \hline
+Kamis & 18 Juni 2026 & Daily Standup, menyusun fondasi komponen antarmuka untuk alur revisi pembayaran. \\ \hline
+Jumat & 19 Juni 2026 & Daily Standup, melanjutkan pengembangan struktur antarmuka \textit{Revision Flow}. \\ \hline
+Senin & 22 Juni 2026 & Daily Standup, melanjutkan pengerjaan logika komponen \textit{Revision Flow}. \\ \hline
+Selasa & 23 Juni 2026 & Daily Standup, membangun fondasi komponen antarmuka pengguna alur revisi. \\ \hline
+Rabu & 24 Juni 2026 & Daily Standup, integrasi logika penanganan status revisi pada komponen frontend. \\ \hline
+Kamis & 25 Juni 2026 & Daily Standup, refactoring internal komponen revisi agar pemrosesan data sinkron. \\ \hline
+Jumat & 26 Juni 2026 & Daily Standup, integrasi API halaman Potong Tagihan, query hooks, perutean, dan warning modal. \\ \hline
+Senin & 29 Juni 2026 & Daily Standup, penambahan informasi Collector Name dan kolom Memo di detail Potong Tagihan. \\ \hline
+Selasa & 30 Juni 2026 & Daily Standup, bug fixing dan penyesuaian kolom data pada detail Potong Tagihan. \\ \hline
+Rabu & 01 Juli 2026 & Daily Standup, optimasi navigasi URL halaman Potong Tagihan dan alur revisi. \\ \hline
+Kamis & 02 Juli 2026 & Daily Standup, penyelesaian penggabungan (merge) MR fitur Potong Tagihan dan Progress Modal. \\ \hline
+Jumat & 03 Juli 2026 & Daily Standup, implementasi \textit{non-allocation lock}, contiguous add payment, dan mode read-only. \\ \hline
+Senin & 06 Juli 2026 & Daily Standup, refactoring besar arsitektur Revision v2, pemecahan komponen modular, dan alur setor tunai. \\ \hline
+Selasa & 07 Juli 2026 & Daily Standup, penyesuaian operan pengambilan status pembayaran dan merge MR Revision v2. \\ \hline
+Rabu & 08 Juli 2026 & Menyelesaikan penambahan status badge global pada daftar dan detail Potong Tagihan. \\ \hline
+Kamis & 09 Juli 2026 & Daily Standup, penambahan pemisah ribuan pada input uang, filter ID koleksi, dan penyesuaian payload. \\ \hline
+Jumat & 10 Juli 2026 & Daily Standup, penyaringan pembayaran status Done dan penanganan sementara revisi kas. \\ \hline
+Senin & 13 Juli 2026 & Daily Standup, penanganan status tertunda, bukti transfer, dan skenario gagal tagih pada revisi. \\ \hline
+Selasa & 14 Juli 2026 & Daily Standup, refactoring pengambil data pembayaran dan logika pengelompokan pelanggan. \\ \hline
+Rabu & 15 Juli 2026 & Daily Standup, integrasi tombol Accept/Decline endpoint baru dan modal faktur unallocated. \\ \hline
+Kamis & 16 Juli 2026 & Daily Standup, konfigurasi default sorting, penguncian bank metode setor, dan perbaikan modal revisi. \\ \hline
+Jumat & 17 Juli 2026 & Daily Standup, refactoring detail revisi ke rute \texttt{/payment-revision} dan date picker komponen. \\ \hline
+Senin & 20 Juli 2026 & Daily Standup, batasan perubahan non-tunai ke tunai (tooltip), panduan upload berkas, dan payload revisi. \\ \hline
+Selasa & 21 Juli 2026 & Perbaikan alur revisi cash before setor dan persistensi nomor faktur pada setor tunai. \\ \hline
+Rabu & 22 Juli 2026 & Implementasi \textit{IndexedDB} bukti bayar setor tunai dan infinite scroll area koleksi. \\ \hline
+Kamis & 23 Juli 2026 & Penambahan filter wajib plant saat ini dan loading spinner pada dropdown single-select. \\ \hline
+Jumat & 24 Juli 2026 & Implementasi server-side search dan infinite scroll pada daftar pelanggan kolektor. \\ \hline
+Senin & 27 Juli 2026 & Validasi setoran kas, payload builder pembayaran accepted, dan tooltip tombol disabled. \\ \hline
+Selasa & 28 Juli 2026 & Integrasi filter pencarian nama kolektor/rekening bank dan filter FAR Netral. \\ \hline
+Rabu & 29 Juli 2026 & Penyelarasan urutan data revisi langsung dari backend dan perapian navigasi kartu pelanggan. \\ \hline
+Kamis & 30 Juli 2026 & Penanganan tiket bantuan operasional harian Parapay dan perbaikan data transaksi di database DC/RDC. \\ \hline
+Jumat & 31 Juli 2026 & Penanganan tiket bantuan operasional harian Parapay dan troubleshooting transaksi database. \\ \hline
+Senin & 03 Ags 2026 & Penanganan tiket bantuan operasional harian Parapay dan verifikasi data transaksi produksi. \\ \hline
+Selasa & 04 Ags 2026 & Pengembangan opsi status Gagal Tagih khusus untuk skenario pembayaran tunggal. \\ \hline
+Rabu & 05 Ags 2026 & Penambahan sistem proteksi (guard) multi-payment dan whitelist ekstensi file upload revisi. \\ \hline
+Kamis & 06 Ags 2026 & Penanganan tiket bantuan operasional harian Parapay dan data patching database produksi. \\ \hline
+Jumat & 07 Ags 2026 & Penanganan tiket bantuan operasional harian Parapay dan verifikasi operasional cabang DC/RDC. \\ \hline
+Senin & 10 Ags 2026 & Penanganan tiket bantuan operasional harian Parapay dan investigasi transaksi piutang. \\ \hline
+Selasa & 11 Ags 2026 & Implementasi awal konfigurasi role dan permission modul \textit{admin-receipt}, serta finalisasi laporan KP. \\ \hline
+\end{longtable}
+\end{center}

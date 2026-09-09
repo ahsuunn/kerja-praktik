@@ -38,3 +38,4 @@
 \contentsline {subsection}{\numberline {4.4.2}Saran untuk Pelaksanaan Kerja Praktik Selanjutnya}{20}{subsection.4.4.2}%
 \contentsline {chapter}{DAFTAR PUSTAKA}{21}{chapter*.4}%
 \contentsline {chapter}{Lampiran A. Term of Reference (TOR)}{22}{Item.72}%
+\contentsline {chapter}{Lampiran B. Catatan Aktivitas Harian Log Kerja Praktik}{27}{chapter*.5}%
