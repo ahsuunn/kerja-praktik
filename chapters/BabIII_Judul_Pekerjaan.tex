@@ -1,82 +1,109 @@
 \chapter{Pengembangan Fungsi Manajemen Penagihan Piutang dan Alur Revisi Pembayaran pada Aplikasi Parapay}
 
-\section{Analisis Kebutuhan Sistem Parapay}
-Aplikasi \textbf{Parapay} merupakan sistem informasi berbasis web yang dikembangkan oleh tim FATL (\textit{Financial Accounting \& Technology Logistics}) PT Paragon Technology and Innovation untuk memfasilitasi penagihan dan pencatatan piutang usaha (\textit{Account Receivable} / AR). Pengguna utama dari aplikasi ini adalah \textit{collector} atau FAR (\textit{Field Account Receivable}) yang melakukan penagihan faktur ke berbagai pelanggan (toko/distributor) di seluruh Indonesia.
+\section{Analisis Kebutuhan dan Proses Bisnis Parapay}
+Aplikasi \textbf{Parapay} merupakan platform digital manajemen dan penagihan piutang usaha (\textit{Account Receivable} atau AR) yang dikembangkan oleh \textit{Stream} FATL PT Paragon Technology and Innovation. Aplikasi ini berfungsi menjembatani sistem ERP pusat berbasis SAP dengan aktivitas operasional penagihan di lapangan yang dilakukan oleh petugas \textit{Field Account Receivable} (FAR).
 
-Dalam proses bisnis harian, seorang FAR membuat daftar pengumpulan faktur (\textit{collection}), menagih pembayaran dengan beragam metode (tunai, transfer bank, cek, giro, maupun retur), serta melaporkan bukti penyetoran pembayaran kepada admin keuangan pusat. Namun, sistem Parapay versi awal menghadapi beberapa permasalahan teknis yang menghambat operasional:
+\subsection{Integrasi Ekosistem SAP dan Struktur Multi-Plant}
+Dalam rantai pasok ParagonCorp, master data faktur penjualan diterbitkan dan dikontrol secara terpusat di dalam SAP. Parapay bertindak sebagai sistem operasional yang menarik (\textit{pull}) daftar faktur aktif dari SAP untuk ditugaskan kepada FAR, mencatat transaksi pembayaran yang terjadi di lapangan, dan mengirimkan kembali (\textit{sync}) hasil rekonsiliasi pembayaran yang telah disetujui ke dalam SAP sebagai pencatatan buku besar akhir.
 
+Aplikasi Parapay mengelola piutang pada berbagai entitas bisnis dan cabang (\textit{plant}), di antaranya PT Parama Global Inspira (yang mengoperasikan 28 DC/RDC nasional seperti cabang Bogor, Kendari, dan Ambon) serta PT Paranova Global Optima (Beyondly). Setiap pelanggan (\textit{customer}) di setiap \textit{plant} dipetakan ke dalam satu area penagihan dan satu petugas FAR.
+
+\subsection{Siklus Hidup Koleksi Penagihan (\textit{Collection Lifecycle})}
+Alur kerja standar operasional penagihan pada aplikasi Parapay berlangsung sebagai berikut:
 \begin{enumerate}[label=\arabic*)]
-  \item \textbf{Ketiadaan Fitur Simpan Draf}: FAR sering kali kehilangan data pembuatan koleksi penagihan jika sesi peramban terputus sebelum seluruh faktur selesai diinput.
-  \item \textbf{Kompleksitas Alur Revisi Pembayaran (\textit{Revision Flow})}: Struktur kode revisi pembayaran lama (\textit{Revision v1}) sulit dipelihara, tidak modular, serta memiliki kelemahan dalam sinkronisasi status pembayaran yang telah berstatus \textit{Done} atau \textit{Pending}.
-  \item \textbf{Kerentanan Berkas Bukti Bayar pada Akses Luring}: Pada skenario revisi setor tunai (\textit{cash after setor}), dokumen bukti transfer kerap gagal diunggah atau terhapus saat terjadi perulangan navigasi.
-  \item \textbf{Masalah Skalabilitas dan Kinerja Antarmuka}: Halaman pemilihan area dan daftar pelanggan mengalami penurunan responsivitas (\textit{lag}) ketika memuat lebih dari 50 data pelanggan tanpa mekanisme pengurutan dan pencarian dari server.
+  \item \textbf{Pembuatan Koleksi}: Admin AR membuat sebuah \textit{collection}, yaitu kumpulan faktur dari satu atau lebih pelanggan yang ditugaskan kepada seorang FAR untuk ditagihkan dalam satu rute perjalanan penagihan.
+  \item \textbf{Penerimaan Koleksi oleh FAR}: FAR menerima dokumen koleksi melalui aplikasi dan dapat menerima (\textit{Accept}) atau menolak (\textit{Decline}) koleksi tersebut. Jika ditolak, Admin AR dapat menyesuaikan atau menghapus koleksi.
+  \item \textbf{Penagihan dan Pencatatan Pembayaran}: Ketika melakukan kunjungan, FAR dapat mencatat status \textbf{Gagal Tagih} per pelanggan dengan alasan tertentu jika penagihan belum berhasil. Jika pembayaran berhasil diterima, FAR memasukkan rincian pembayaran. Parapay mendukung 7 tipe pembayaran:
+  \begin{itemize}
+    \item Tunai (\textit{Cash});
+    \item Transfer Bank;
+    \item Bilyet Giro;
+    \item Potong Tagihan (pemotongan khusus/diskon);
+    \item Tukar Faktur;
+    \item Retur Barang; dan
+    \item Nota Debit/Kredit (\textit{Debit/Credit Note}).
+  \end{itemize}
+  \item \textbf{Alokasi Pembayaran ke Faktur}: Satu transaksi pembayaran dapat dialokasikan ke satu atau banyak faktur secara penuh (\textit{full allocation}), sebagian (\textit{partial allocation}), atau jika tidak teralokasi akan tercatat sebagai gagal tagih di akhir penagihan.
+  \item \textbf{Persetujuan Admin AR}: Pembayaran yang telah diselesaikan oleh FAR dikirimkan ke portal Admin AR. Admin AR dapat menyetujui pembayaran (dengan penambahan toleransi debit/kredit jika terdapat selisih kecil) atau menolak pembayaran. Penolakan ini memicu alur revisi (\textit{Revision Flow}) yang mewajibkan FAR memperbaiki rincian data.
 \end{enumerate}
 
-Berdasarkan analisis permasalahan tersebut, penulis bersama tim pengembang FATL merancang dan mengimplementasikan serangkaian perbaikan arsitektur dan penambahan fitur pada aplikasi Parapay.
+\subsection{Aturan Bisnis Khusus Pembayaran Tunai (\textit{Cash Payment Constraints})}
+Pembayaran tunai memiliki batasan bisnis yang sangat ketat:
+\begin{enumerate}[label=\alph*)]
+  \item Dalam satu \textit{collection}, \textbf{hanya boleh terdapat tepat 1 entri pembayaran tunai}, yang dapat mengonsolidasikan alokasi faktur dari beberapa pelanggan sekaligus.
+  \item Pembayaran tunai harus melalui tahapan \textbf{Setor Tunai} (melalui admin cabang atau transfer bank) terlebih dahulu sebelum transaksi tersebut muncul di halaman persetujuan Admin AR.
+  \item Jika terjadi kekeliruan, revisi pembayaran tunai sebelum setor (\textit{Cash Before Setor}) dapat dilakukan langsung oleh FAR. Namun, untuk pembayaran tunai yang sudah disetor (\textit{Cash After Setor}), revisi dilakukan melalui alur khusus yang mengelompokkan (\textit{grouping}) seluruh pelanggan yang teralokasi pada pembayaran tunai tersebut agar integritas batasan satu pembayaran tunai per koleksi tetap terjaga.
+\end{enumerate}
+
+\subsection{Permasalahan pada Alur Revisi Sistem Lama}
+Pada versi Parapay lama, ketika Admin AR menolak pembayaran, seluruh data pembayaran pada koleksi tersebut harus dimasukkan ulang secara manual dari awal oleh FAR. Hal ini menimbulkan inefisiensi waktu yang signifikan bagi petugas di lapangan, meningkatkan beban panggilan bantuan ke tim IT, serta memperlambat siklus penyetoran dana ke perusahaan.
 
 \section{Pengembangan Fitur Simpan Draf dan Modul Potong Tagihan}
 
-\subsection{Implementasi Alur \textit{Save as Draft}}
-Untuk mencegah kehilangan progress input data oleh FAR, penulis menambahkan fungsi \textit{Save as Draft} pada alur pembuatan daftar koleksi penagihan. Fitur ini memungkinkan pengguna menyimpan draf transaksi secara bertahap tanpa harus langsung menerbitkan dokumen penagihan final ke server.
+\subsection{Implementasi Fitur \textit{Save as Draft}}
+Untuk mencegah hilangnya data input ketika FAR menyusun daftar penagihan bertahap di lapangan, penulis mengimplementasikan mekanisme \textit{Save as Draft}. Fitur ini memungkinkan penyimpanan status transaksi sementara pada basis data sebelum dokumen diterbitkan secara final.
 
-Logika state draf dikelola menggunakan pustaka \textit{state management} dan \textit{query hooks} khusus. Ketika pengguna menekan tombol simpan draf, payload data faktur disimpan dengan penanda status \texttt{Draft}. Penulis juga menambahkan komponen \textit{warning modal} yang secara otomatis memperingatkan pengguna apabila terdapat indikasi \textit{missing progress} saat berpindah halaman.
+Logika draf dibangun menggunakan pustaka manajemen state dan \textit{query hooks} terintegrasi. Ketika FAR beralih menu atau menutup peramban, aplikasi secara otomatis menampilkan \textit{warning modal} untuk mengonfirmasi penyimpanan draf, sehingga mencegah potensi data hilang (\textit{missing progress}).
 
 \subsection{Pengembangan Modul Potong Tagihan}
-Modul Potong Tagihan berfungsi untuk menangani pengalokasian diskon, retur, atau pemotongan faktur piutang khusus. Penulis bertanggung jawab membangun antarmuka dan integrasi \textit{endpoint API} utama untuk modul ini, yang mencakup:
+Modul Potong Tagihan merupakan salah satu metode pembayaran yang menangani pemotongan piutang akibat program promosi atau klaim khusus. Penulis mengembangkan komponen antarmuka modul ini, yang meliputi:
 \begin{enumerate}[label=\alph*)]
-  \item \textbf{Kolom Aksi dan Perutean Dinamik}: Menambahkan kolom navigasi detail, informasi \textit{Collector Name}, serta kolom catatan (\textit{memo}) pada halaman detail Potong Tagihan.
-  \item \textbf{Komponen Status Badge Dinamik}: Menambahkan komponen penanda status global (\texttt{Done}, \texttt{Draft}, \texttt{Pending}, \texttt{Rejected}) untuk menggantikan penanda statis sebelumnya, serta mengimplementasikan kondisi \textit{disabled state} pada tombol pembaruan data apabila dokumen dalam proses persetujuan.
+  \item \textbf{Halaman Detail dan Perutean Dinamik}: Menampilkan rincian \textit{Collector Name}, kolom catatan (\textit{memo}), dan relasi faktur yang dipotong.
+  \item \textbf{Komponen Status Badge Dinamik}: Menerapkan indikator status global (\texttt{Done}, \texttt{Draft}, \texttt{Pending}, \texttt{Rejected}) serta kondisi tombol nonaktif (\textit{disabled state}) ketika dokumen sedang dalam peninjauan.
+  \item \textbf{Role-Based Access Control (RBAC)}: Mengonfigurasi hak akses agar pemotongan tagihan hanya dapat dimodifikasi oleh pengguna yang berwenang.
 \end{enumerate}
 
 \section{Refactoring dan Arsitektur Alur Revisi Pembayaran (\textit{Revision Flow v2})}
 
-\subsection{Perancangan Ulang Arsitektur Revisi (Revision v2)}
-Alur revisi pembayaran merupakan modul yang paling kompleks pada aplikasi Parapay karena melibatkan penyesuaian alokasi dana, pergeseran tipe pembayaran, serta persetujuan multi-level oleh admin. Arsitektur lama (\textit{Revision v1}) dibongkar (\textit{refactored}) dan digantikan oleh \textbf{Revision v2} yang berbasis komponen modular.
+\subsection{Perancangan Arsitektur Revision v2}
+Untuk mengatasi kelemahan sistem lama yang mewajibkan pengisian ulang dari nol, penulis bersama tim pengembang merefaktor modul revisi menjadi \textbf{Revision v2}. Pada Revision v2, ketika FAR membuka halaman revisi, sistem secara otomatis mengambil (\textit{fetch}) \textit{snapshot} data pembayaran lama dan memuatnya ke dalam form editor modular, sehingga FAR hanya perlu mengubah bagian yang keliru (misalnya nominal bayar atau tanggal).
 
-Gambar~\ref{fig:arsitektur-revisi} mengilustrasikan alur pemrosesan data dan validasi pada modul Revision v2 yang dikembangkan.
+Gambar~\ref{fig:arsitektur-revisi} mengilustrasikan alur logika pemrosesan pada modul Revision v2.
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[font=\small\sffamily, >=stealth, node distance=1.4cm]
+\begin{tikzpicture}[font=\small\sffamily, >=stealth, node distance=1.3cm]
 \tikzstyle{start} = [draw, ellipse, fill=red!10, minimum height=0.8cm, text centered]
-\tikzstyle{process} = [draw, rectangle, fill=blue!10, text width=3.6cm, text centered, minimum height=0.9cm, rounded corners]
+\tikzstyle{process} = [draw, rectangle, fill=blue!10, text width=3.8cm, text centered, minimum height=0.85cm, rounded corners]
 \tikzstyle{decision} = [draw, diamond, fill=orange!10, text width=2.8cm, text centered, inner sep=0pt]
 \tikzstyle{end} = [draw, rectangle, fill=green!10, minimum height=0.8cm, text centered, rounded corners]
 
-\node[start] (init) {Pengajuan Revisi Pembayaran};
-\node[process, below of=init] (val) {Validasi Status \& Tipe Pembayaran};
-\node[decision, below of=val, node distance=2.2cm] (check) {Status Penagihan?};
-\node[process, right of=check, node distance=4.5cm] (setor) {Alur \textit{Cash After Setor}\\+ Caching \textit{IndexedDB}};
-\node[process, below of=check, node distance=2.2cm] (inval) {Eksekusi \textit{State Invalidation}\\Refresh Entry Revisi};
-\node[end, below of=inval] (finish) {Persetujuan Admin \& Update DB};
+\node[start] (init) {Pemicu Revisi dari Admin AR};
+\node[process, below of=init] (fetch) {Pemuatan \textit{Snapshot} Data Lama};
+\node[decision, below of=fetch, node distance=2.0cm] (check) {Tipe Pembayaran?};
+\node[process, right of=check, node distance=4.5cm] (setor) {Alur \textit{Cash After Setor}\\+ \textit{Customer Grouping}\\+ Caching \textit{IndexedDB}};
+\node[process, below of=check, node distance=2.0cm] (edit) {Modifikasi Data \& Validasi (\textit{Non-Allocation Lock})};
+\node[process, below of=edit] (inval) {Eksekusi \textit{State Invalidation}};
+\node[end, below of=inval] (finish) {Submit Revisi ke Admin AR};
 
-\draw[->, thick] (init) -- (val);
-\draw[->, thick] (val) -- (check);
-\draw[->, thick] (check) -- node[above]{\footnotesize Setor Tunai} (setor);
-\draw[->, thick] (check) -- node[right]{\footnotesize Non-Setor} (inval);
-\draw[->, thick] (setor) |- (inval);
+\draw[->, thick] (init) -- (fetch);
+\draw[->, thick] (fetch) -- (check);
+\draw[->, thick] (check) -- node[above]{\footnotesize Tunai Pasca Setor} (setor);
+\draw[->, thick] (check) -- node[right]{\footnotesize Non-Tunai / Pra Setor} (edit);
+\draw[->, thick] (setor) |- (edit);
+\draw[->, thick] (edit) -- (inval);
 \draw[->, thick] (inval) -- (finish);
 \end{tikzpicture}
 \caption{Alur pemrosesan data dan validasi pada modul Revision v2 Parapay}
 \label{fig:arsitektur-revisi}
 \end{figure}
 
-\subsection{Implementasi Pembatasan Alokasi dan Aturan Bisnis}
-Dalam pengembangan Revision v2, beberapa aturan bisnis baru berhasil diimplementasikan:
+\subsection{Implementasi Aturan Bisnis dan Penguncian Alokasi}
+Pada arsitektur Revision v2, beberapa aturan validasi kritis diimplementasikan:
 \begin{enumerate}[label=\alph*)]
-  \item \textbf{\textit{Non-Allocation Lock} dan \textit{Contiguous Add Payment}}: Mengimplementasikan penguncian elemen non-alokasi serta fitur penambahan entri pembayaran berturut-turut untuk menjaga konsistensi nilai total pembayaran.
-  \item \textbf{Mode \textit{Read-Only} Otomatis}: Mengaktifkan mode keterbacaan saja (\textit{read-only}) pada antarmuka pengguna apabila dokumen pembayaran sedang berstatus ``Menunggu Admin''.
-  \item \textbf{Batasan Perubahan Tipe Pembayaran}: Menerapkan aturan pembatasan perubahan tipe pembayaran dari non-tunai ke tunai beserta tampilan \textit{tooltip} penjelas untuk mencegah kesalahan manipulasi alur setor kas.
-  \item \textbf{Pengelompokan Pelanggan (\textit{Customer Grouping})}: Merefaktor pengambil data pembayaran (\textit{payment fetchers}) untuk mengelompokkan riwayat faktur berdasarkan pelanggan pada kartu detail revisi.
+  \item \textbf{\textit{Non-Allocation Lock} dan \textit{Contiguous Add Payment}}: Mengunci elemen yang tidak mengalami perubahan alokasi serta memungkinkan penambahan pembayaran berturut-turut untuk menjaga integritas total nilai pembayaran.
+  \item \textbf{Mode \textit{Read-Only}}: Mengunci form antarmuka menjadi mode baca saja apabila status pembayaran sedang berada dalam tahap peninjauan admin.
+  \item \textbf{Batasan Perubahan Tipe Pembayaran}: Memberikan peringatan \textit{tooltip} dan membatasi perubahan tipe pembayaran dari non-tunai menjadi tunai agar tidak merusak alur setor kas yang telah tercatat.
+  \item \textbf{Pengelompokan Pelanggan (\textit{Customer Grouping})}: Menyusun ulang kartu daftar pelanggan pada alur revisi setor tunai sehingga seluruh faktur yang terikat pada pembayaran tunai tersebut dapat ditinjau secara serentak.
 \end{enumerate}
 
-\section{Persistensi Luring Berkas Bukti Bayar via IndexedDB}
-Salah satu tantangan kritis pada alur revisi setor tunai (\textit{cash after setor}) adalah penanganan berkas pratinjau bukti transfer. Saat pengguna melakukan pergantian tab atau menambah entri pembayaran baru, berkas gambar/PDF yang diunggah kerap terlepas dari \textit{memory state} peramban sebelum dikirimkan ke server.
+\section{Persistensi Luring Berkas Bukti Transfer via IndexedDB}
+Pada alur penagihan di lapangan, FAR sering kali mengalami kendala koneksi internet tidak stabil saat mengunggah foto atau PDF bukti transfer bank. Jika pengguna berpindah tab atau menambahkan entri pembayaran lain sebelum pengiriman dilakukan, berkas yang berada pada memori peramban dapat hilang.
 
-Untuk mengatasi kendala ini, penulis mengimplementasikan mekanisme penyimpanan sementara berbasis \textbf{IndexedDB} pada peramban web. Struktur penanganan berkas luring ini dijelaskan pada kode berikut:
+Untuk mengatasi permasalahan ini, penulis mengintegrasikan API peramban \textbf{IndexedDB} sebagai media penyimpanan luring sementara di sisi klien. Potongan logika penyimpanan berkas bukti transfer ini diimplementasikan sebagai berikut:
 
 \begin{verbatim}
-// Contoh penerapan alur penyimpanan bukti bayar luring via IndexedDB
+// Menyimpan berkas bukti transfer secara luring ke IndexedDB
 const storeProofFileLocally = async (revisionId, fileBlob) => {
   const db = await openDatabase('ParapayOfflineDB', 1);
   const tx = db.transaction('payment_proofs', 'readwrite');
@@ -88,24 +115,30 @@ const storeProofFileLocally = async (revisionId, fileBlob) => {
 };
 \end{verbatim}
 
-Dengan memanfaatkan \textit{IndexedDB}, berkas bukti bayar tetap bertahan (\textit{persistent}) meskipun pengguna melakukan manipulasi data pada form revisi, sehingga mengeliminasi risiko pembatalan pengunggahan akibat koneksi terputus.
+Ketika FAR membuka kembali halaman pembayaran atau mengirimkan data secara \textit{batch}, berkas bukti bayar diambil kembali dari \textit{IndexedDB} dan dikirimkan ke server tanpa mengharuskan pengguna mengunggah ulang dokumen.
 
-\section{Optimasi Antarmuka Pengguna (\textit{Performance} \& \textit{UI})}
-Untuk meningkatkan kenyamanan pengguna dan kecepatan pemuatan halaman aplikasi Parapay, dilakukan beberapa optimasi antarmuka:
-
+\section{Optimasi Antarmuka Pengguna (\textit{Performance \& UI})}
+Untuk meningkatkan responsivitas aplikasi saat menangani ribuan data faktur di 28 DC/RDC, dilakukan beberapa optimasi antarmuka:
 \begin{enumerate}[label=\arabic*)]
-  \item \textbf{\textit{Server-Side Search} dan \textit{Infinite Scroll}}: Pada komponen modal pemilihan area koleksi dan daftar pelanggan kolektor, pemuatan data statis digantikan dengan pencarian berbasis server (\textit{server-side query}) serta \textit{infinite scroll}. Hal ini menurunkan waktu muat awal halaman dari sebelumnya beberapa detik menjadi di bawah 300 milidetik.
-  \item \textbf{Formatting Mata Uang}: Menambahkan fungsi pemisah ribuan (\textit{thousand separator}) secara otomatis pada seluruh kolom input nominal uang untuk menghindari kesalahan pengisian angka nol oleh FAR.
-  \item \textbf{Default Sorting}: Menambahkan konfigurasi default pengurutan data (\texttt{sortBy} dan \texttt{sortOrder}) pada tabel daftar revisi pembayaran.
+  \item \textbf{\textit{Server-Side Search} dan \textit{Infinite Scroll}}: Mengganti pemuatan daftar pelanggan dan area yang sebelumnya statis menjadi kueri berbasis server dengan mekanisme \textit{infinite scroll}. Hal ini menurunkan beban transfer data awal dan memastikan antarmuka tetap responsif meskipun data pelanggan melebihi 50 entri.
+  \item \textbf{Format Pemisah Ribuan Otomatis}: Menerapkan fungsi \textit{thousand separator} pada seluruh kolom input nominal uang untuk meminimalkan kesalahan penginputan angka oleh FAR.
+  \item \textbf{Pengurutan Data Default}: Menambahkan konfigurasi bawaan \texttt{sortBy} dan \texttt{sortOrder} pada tabel daftar revisi pembayaran.
 \end{enumerate}
 
-\section{Hasil dan Evaluasi Pekerjaan}
-Seluruh rangkaian pengembangan fitur, refactoring Revision v2, integrasi \textit{IndexedDB}, serta optimasi UI telah diselesaikan dan berhasil digabungkan (\textit{merged}) ke dalam repositori utama melalui proses \textit{Code Review / Merge Request} (MR) di bawah supervisi tim pengembang FATL.
-
-Berdasarkan pengujian akhir terintegrasi:
+\section{Dukungan dan Pemeliharaan Operasional Produksi}
+Pada minggu-minggu akhir pelaksanaan Kerja Praktik, aplikasi Parapay telah memasuki fase pasca rilis (\textit{Post Go-Live}). Penulis berkontribusi langsung dalam pemeliharaan operasional harian sistem:
 \begin{itemize}
-  \item Fitur \textit{Save as Draft} berhasil menekan potensi kehilangan data penagihan penagih di lapangan hingga 0\%.
-  \item Refactoring Revision v2 meningkatkan kejelasan arsitektur kode dan memudahkan integrasi \textit{endpoint} revisi baru (\texttt{/payment-revision}).
-  \item Penerapan \textit{IndexedDB} menghilangkan isu gagal simpan bukti transfer pada alur revisi kas.
-  \item Optimasi \textit{infinite scroll} mampu menangani pemuatan area penagihan dengan kapasitas lebih dari 50 lokasi secara lancar tanpa hambatan performa.
+  \item menangani dan menutup tiket keluhan operasional yang masuk dari petugas penagih di 28 cabang DC/RDC;
+  \item melakukan penelusuran (\textit{troubleshooting}) anomali transaksi akibat ketidaksesuaian data alokasi penagihan; dan
+  \item mengeksekusi skrip perbaikan data (\textit{data patch}) berbasis SQL/Sequelize pada basis data produksi secara terkontrol bersama pembimbing teknis.
 \end{itemize}
+
+\section{Dinamika, Kendala, dan Pembahasan Solusi}
+Selama pelaksanaan proyek Parapay, penulis menghadapi beberapa dinamika dan tantangan teknis:
+
+\begin{enumerate}[label=\arabic*)]
+  \item \textbf{Kurangnya Dokumentasi Awal dan Aplikasi Lama}: Penulis bergabung pada saat proyek telah mencapai sekitar 75\% dari fase pengembangan menuju rilis operasional. Karena aplikasi ini merupakan hasil perombakan (\textit{revamp}) dari aplikasi lama berbasis PHP yang minim dokumentasi, batasan bisnis (\textit{business constraints}) sering kali tidak tertulis secara formal. Penulis mengatasi hal ini dengan proaktif berdiskusi secara harian (\textit{by chat} dan \textit{meeting}) bersama pembimbing teknis (Arief Rahman) dan tim bisnis SAP.
+  \item \textbf{Penyelarasan Komunikasi Tim}: Perubahan kebutuhan bisnis terkadang memicu perbedaan pemahaman di antara pengembang apabila terdapat anggota yang berhalangan hadir pada sesi rapat. Masalah ini diselesaikan dengan mencatat hasil keputusan teknis secara tertulis pada catatan MR di GitLab.
+  \item \textbf{Kompleksitas Alur Pengujian Revisi}: Pengujian skenario revisi memerlukan tahapan prasyarat yang panjang (mulai dari pembuatan koleksi, penagihan, penyetoran, hingga penolakan admin). Untuk mempercepat pengujian, penulis membuat skrip simulasi data draf pada lingkungan lokal.
+  \item \textbf{Tantangan Pemanfaatan Perkakas AI}: Dalam penerapan \textit{AI-Native SDLC}, penggunaan instruksi (\textit{prompting}) yang kurang terstruktur tanpa memanfaatkan fitur \textit{skills} dan dokumentasi langsung terkadang menyebabkan AI secara tidak sengaja menghapus kode fitur yang telah dibuat sebelumnya (\textit{code regression}). Penulis mengatasi hal ini dengan memecah komponen menjadi fungsi-fungsi kecil yang modular serta memanfaatkan kendali versi Git secara ketat.
+\end{enumerate}

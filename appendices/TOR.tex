@@ -9,19 +9,20 @@
 \vspace{0.3cm}
 \textbf{PT PARAGON TECHNOLOGY AND INNOVATION}
 \end{center}
-\vspace{0.5cm}
+\vspace{0.4cm}
 
 \begin{enumerate}[label=\arabic*.,leftmargin=1.0cm]
 \item \textbf{TUJUAN PEKERJAAN}\\
-  Mengembangkan dan mengoptimalkan fungsi aplikasi Parapay dalam mengelola penagihan piutang usaha (\textit{Account Receivable}), memfasilitasi alur simpan sementara (\textit{Save as Draft}), serta merefaktor arsitektur alur revisi pembayaran (Revision v2) agar lebih modular, transparan, dan andal bagi petugas FAR di lapangan.
+  Mengembangkan dan mengoptimalkan fungsi aplikasi Parapay dalam mengelola penagihan piutang usaha (\textit{Account Receivable}), memfasilitasi alur simpan sementara (\textit{Save as Draft}), merefaktor arsitektur alur revisi pembayaran (Revision v2) dengan pemuatan data lama secara otomatis, serta mendukung stabilitas operasional penagihan di seluruh cabang distribusi.
 
 \item \textbf{LINGKUP PEKERJAAN}\\
   \begin{enumerate}[label=\alph*)]
-    \item Pengembangan antarmuka dan integrasi logika \textit{Save as Draft} pada alur pemesanan koleksi penagihan.
-    \item Pembuatan modul Potong Tagihan, status *badge* dinamik, dan pemisahan detail pembayaran.
-    \item Refactoring arsitektur Revision v1 menjadi Revision v2 yang mendukung \textit{state invalidation}, *read-only mode*, dan *non-allocation lock*.
-    \item Integrasi API peramban \textit{IndexedDB} untuk penyimpanan bukti transfer pada alur revisi kas.
-    \item Optimasi antarmuka melalui *server-side search* dan *infinite scroll* pada daftar pelanggan dan area.
+    \item Pengembangan antarmuka dan logika \textit{Save as Draft} pada alur pembuatan koleksi penagihan.
+    \item Pembuatan modul Potong Tagihan dengan indikator status dinamik dan pengendalian hak akses (RBAC).
+    \item Refactoring arsitektur Revision v1 menjadi Revision v2 yang mendukung pemuatan otomatis data lama, \textit{state invalidation}, mode \textit{read-only}, \textit{non-allocation lock}, dan alur khusus setor tunai.
+    \item Integrasi API peramban \textit{IndexedDB} untuk penyimpanan bukti transfer secara luring.
+    \item Optimasi antarmuka melalui \textit{server-side search} dan \textit{infinite scroll} pada daftar pelanggan dan area penagihan.
+    \item Penyelesaian tiket bantuan operasional dan pemeliharaan basis data produksi pasca \textit{Go Live}.
   \end{enumerate}
 
 \item \textbf{HASIL PEKERJAAN}\\
@@ -30,25 +31,25 @@
 \item \textbf{BATASAN}\\
   \begin{enumerate}[label=\alph*)]
     \item Pengembangan difokuskan pada \textit{frontend framework} berbasis React/TypeScript dan integrasi API \textit{backend}.
-    \item Pengujian dilakukan terbatas pada lingkungan *staging* dan *development* tim FATL.
+    \item Pengujian dilakukan pada lingkungan \textit{staging} dan basis data produksi secara terkontrol bersama pembimbing teknis.
   \end{enumerate}
 
 \item \textbf{LINGKUNGAN PENGEMBANGAN}\\
   \begin{itemize}
-    \item \textbf{Perangkat Lunak}: Node.js, React, TypeScript, Git, Visual Studio Code / Zed, Zathura.
+    \item \textbf{Perangkat Lunak}: Node.js, React, TypeScript, TanStack Query, Zustand, Git, OpenCode, Zathura.
     \item \textbf{Jaringan}: Paragon Internal Network via VPN.
   \end{itemize}
 
 \item \textbf{METODOLOGI PEKERJAAN}\\
-  Menggunakan pendekatan *Agile Software Development* dengan siklus mingguan mencakup *Daily Standup*, pengulasan kode (\textit{Merge Request}), dan pengujian integrasi.
+  Menggunakan pendekatan \textit{Agile Software Development} dalam lingkungan \textit{AI-Native SDLC} dengan siklus koordinasi mingguan mencakup \textit{Daily Standup}, pengulasan kode (\textit{Merge Request}), dan pemeliharaan operasional.
 
 \end{enumerate}
 
-\vspace{0.8cm}
+\vspace{0.6cm}
 \begin{center}
 Disetujui oleh,
 
-\vspace{1.0cm}
+\vspace{0.8cm}
 \begin{tabular}{p{6cm}p{6cm}}
 \centering Pembimbing Perusahaan & \centering Mahasiswa Kerja Praktik \tabularnewline
 \vspace{1.2cm} & \vspace{1.2cm} \tabularnewline

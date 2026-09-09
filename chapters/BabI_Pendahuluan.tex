@@ -1,29 +1,39 @@
 \chapter{Pendahuluan}
 
 \section{Latar Belakang}
-PT Paragon Technology and Innovation merupakan salah satu perusahaan manufaktur kosmetik terbesar di Indonesia yang menaungi berbagai merek terkemuka seperti Wardah, Make Over, Emina, Kahf, dan LABORE. Dalam menjalankan aktivitas operasional skala nasional, efisiensi dan transparansi pengelolaan piutang usaha (\textit{Account Receivable} atau AR) menjadi elemen krusial untuk menjaga kelancaran alur kas (\textit{cash flow}) serta stabilitas keuangan perusahaan.
+PT Paragon Technology and Innovation (ParagonCorp) merupakan salah satu perusahaan manufaktur kosmetik terkemuka di Indonesia yang menaungi merek-merek ternama seperti Wardah, Make Over, Emina, Kahf, LABORE, Biodef, dan Beyondly. Dalam mendistribusikan produknya ke seluruh wilayah Indonesia dan Malaysia, ParagonCorp didukung oleh entitas anak perusahaan, antara lain PT Parama Global Inspira (Parama) yang mengelola jaringan logistik dan distribusi melalui 28 pusat distribusi (\textit{Distribution Center / Regional Distribution Center} atau DC/RDC), serta PT Paranova Global Optima (Paranova) yang berfokus pada lini produk kesehatan dan kebugaran holistik (\textit{Beyondly}).
 
-Pada struktur organisasi perusahaan, pengelolaan piutang usaha ditangani di bawah Direktorat \textit{Information Technology} oleh tim FATL (\textit{Financial Accounting \& Technology Logistics}). Salah satu sistem utama yang dikembangkan dan dikelola oleh tim FATL adalah aplikasi \textbf{Parapay}. Parapay merupakan sistem aplikasi manajemen dan penagihan pembayaran faktur piutang yang digunakan oleh petugas penagih di lapangan atau FAR (\textit{Field Account Receivable}). Melalui aplikasi Parapay, FAR dapat membuat daftar koleksi penagihan faktur pelanggan, memproses pembayaran multi-metode (tunai, transfer bank, maupun giro), mengelola sisa tagihan, serta menyetorkan bukti pembayaran ke pusat.
+Dalam ekosistem bisnis dengan volume transaksi yang sangat besar, pengelolaan piutang usaha (\textit{Account Receivable} atau AR) menjadi proses krusial untuk menjaga kelancaran arus kas perusahaan. Seluruh master data dan status penagihan faktur piutang dikelola secara terpusat menggunakan sistem ERP (\textit{Enterprise Resource Planning}) berbasis SAP (\textit{System Applications and Products in Data Processing}). Untuk memfasilitasi penagihan langsung di lapangan oleh petugas penagih atau FAR (\textit{Field Account Receivable}), tim pengembang mengembangkan aplikasi khusus bernama \textbf{Parapay}.
 
-Seiring pesatnya pertumbuhan jumlah transaksi dan ekspansi area operasional Paragon, aplikasi Parapay menghadapi tantangan teknis dan kebutuhan fitur baru yang kompleks. Beberapa kendala utama yang dijumpai meliputi perlunya penanganan mekanisme simpan sementara (\textit{Save as Draft}) saat FAR menyusun daftar penagihan, transparansi alur revisi pembayaran kas maupun non-kas, validasi pembatasan alokasi pembayaran, ketahanan penanganan berkas bukti transfer secara luring (\textit{offline-first storage}) menggunakan \textit{IndexedDB}, serta optimasi pemuatan antarmuka antardepan (\textit{frontend}) saat menangani ribuan data pelanggan dan faktur penagihan.
+Aplikasi Parapay awalnya dibangun menggunakan bahasa pemrograman PHP. Seiring dengan peningkatan kompleksitas kebutuhan operasional penagihan dan kebutuhan integrasi dua arah dengan SAP, tim pengembang melakukan pembangunan ulang (\textit{revamp}) aplikasi Parapay menggunakan teknologi modern berbasis JavaScript/TypeScript. Melalui aplikasi ini, Admin AR dapat membuat kumpulan faktur (\textit{collection}) per rute penagihan, sedangkan FAR dapat menagihkan faktur pelanggan, mencatat 7 jenis tipe pembayaran (tunai, transfer bank, bilyet giro, potong tagihan, tukar faktur, retur, serta penyesuaian debit/kredit), dan menyetorkan hasilnya ke pusat.
 
-Berlandaskan kebutuhan bisnis dan teknis tersebut, pelaksanaan Kerja Praktik ini difokuskan pada \textbf{Pengembangan Fungsi Manajemen Penagihan Piutang dan Alur Revisi Pembayaran pada Aplikasi Parapay}. Melalui kegiatan ini, penulis berkontribusi secara langsung sebagai \textit{Software Engineer} dalam mengembangkan modul antarmuka pengguna, merefaktor arsitektur alur revisi pembayaran, serta mengintegrasikan pemrosesan data dengan \textit{backend} untuk meningkatkan keandalan dan kualitas aplikasi Parapay.
+Namun, pada proses implementasinya, sistem Parapay menghadapi sejumlah permasalahan teknis dan alur bisnis yang kompleks:
+\begin{enumerate}[label=\arabic*)]
+  \item \textbf{Ketiadaan Fitur Simpan Draf}: FAR kerap kehilangan seluruh data input pembuatan koleksi penagihan apabila sesi peramban terputus sebelum seluruh faktur selesai dimasukkan.
+  \item \textbf{Inefisiensi Alur Revisi Pembayaran}: Pada sistem lama, ketika suatu pembayaran ditolak oleh Admin AR (misalnya karena ketidaksesuaian nominal atau tanggal bayar), FAR harus memasukkan ulang seluruh rincian pembayaran dari awal. Hal ini sangat memakan waktu dan rentan memicu kesalahan berulang.
+  \item \textbf{Kompleksitas Aturan Pembayaran Tunai}: Sesuai aturan bisnis, dalam satu koleksi penagihan hanya boleh terdapat satu entri pembayaran tunai yang dapat mencakup banyak pelanggan. Pembayaran tunai harus melalui proses setor terlebih dahulu sebelum dapat disetujui admin, sehingga alur revisi sebelum setor (\textit{Cash Before Setor}) dan setelah setor (\textit{Cash After Setor}) memerlukan penanganan pengelompokan data pelanggan yang berbeda.
+  \item \textbf{Kerentanan Berkas Bukti Transfer Luring}: Dokumen bukti pembayaran sering kali hilang dari memori peramban saat pengguna beralih antarmuka atau merevisi entri pembayaran baru sebelum berhasil diunggah ke server.
+  \item \textbf{Penurunan Kinerja Antarmuka}: Pemuatan data area dan pelanggan yang melebihi 50 entri secara statis menimbulkan jeda waktu muat (\textit{lag}) yang mengganggu kenyamanan pengguna di lapangan.
+\end{enumerate}
+
+Berdasarkan permasalahan di atas, pelaksanaan Kerja Praktik ini difokuskan pada \textbf{Pengembangan Fungsi Manajemen Penagihan Piutang dan Alur Revisi Pembayaran pada Aplikasi Parapay}. Penulis berperan sebagai \textit{Software Engineer} yang bertanggung jawab mengembangkan antarmuka, merefaktor arsitektur alur revisi menjadi lebih modular dan adaptif, mengintegrasikan penyimpanan bukti bayar luring, serta memastikan stabilitas operasional sistem pasca \textit{Go Live}.
 
 \section{Tempat dan Waktu Pelaksanaan}
 Kegiatan Kerja Praktik dilaksanakan pada:
 \begin{itemize}
   \item \textbf{Lokasi Perusahaan}: PT Paragon Technology and Innovation, Head Office, Jl. Ciledug Raya No. 10 RT 018 / RW 003, Kelurahan Ulujami, Kecamatan Pesanggrahan, Jakarta Selatan 12250.
-  \item \textbf{Unit Kerja}: Direktorat \textit{Information Technology}, Tim \textit{Financial Accounting \& Technology Logistics} (FATL).
+  \item \textbf{Unit Kerja}: Direktorat \textit{Information Technology}, Divisi \textit{Software Engineering}, \textit{Stream} FATL (\textit{Finance, Accounting, Tax, and Legal}).
   \item \textbf{Waktu Pelaksanaan}: 2 Juni 2026 hingga 11 Agustus 2026 (durasi 10 minggu).
 \end{itemize}
 
 \section{Ruang Lingkup Pekerjaan}
-Ruang lingkup pekerjaan penulis selama pelaksanaan Kerja Praktik meliputi hal-hal berikut:
+Ruang lingkup pekerjaan penulis selama pelaksanaan Kerja Praktik meliputi:
 \begin{enumerate}[label=\arabic*)]
-  \item \textbf{Pengembangan Fitur Draf dan Potong Tagihan}: Mengimplementasikan antarmuka serta logika alur \textit{Save as Draft} untuk daftar penagihan koleksi FAR dan pemrosesan detail dokumen Potong Tagihan.
-  \item \textbf{Refactoring dan Pengembangan Alur Revisi Pembayaran (\textit{Revision Flow})}: Merancang ulang arsitektur alur revisi dari Revision v1 menuju Revision v2 yang modular, menangani alur \textit{Cash Before Setor} dan \textit{Cash After Setor}, pembatasan alokasi (\textit{non-allocation lock}), serta pembaruan status data otomatis (\textit{state invalidation}).
-  \item \textbf{Persistensi Berkas Bukti Pembayaran Luring}: Mengimplementasikan penyimpanan bukti bayar di sisi peramban web memanfaatkan perantara API \textit{IndexedDB} untuk alur revisi setor tunai.
-  \item \textbf{Optimasi Performa dan Komponen UI}: Mengimplementasikan \textit{server-side search}, \textit{infinite scroll}, status \textit{badge} dinamik, serta penanganan validasi input mata uang dan pengurutan data tabel.
+  \item \textbf{Pengembangan Fitur Simpan Draf dan Modul Potong Tagihan}: Membangun antarmuka dan logika \textit{Save as Draft} pada pembuatan koleksi penagihan serta pemrosesan dokumen Potong Tagihan dengan indikator status dinamik dan \textit{Role-Based Access Control} (RBAC).
+  \item \textbf{Refactoring Alur Revisi Pembayaran (Revision v2)}: Merancang ulang arsitektur revisi agar dapat memuat (\textit{fetch}) data pembayaran lama secara otomatis, mengunci elemen non-alokasi (\textit{non-allocation lock}), mendukung penambahan pembayaran berturut-turut (\textit{contiguous add payment}), serta menangani alur khusus setor tunai.
+  \item \textbf{Persistensi Luring Berkas Bukti Pembayaran}: Mengintegrasikan API peramban \textit{IndexedDB} untuk menyimpan berkas bukti transfer sementara di sisi klien guna mencegah kehilangan berkas saat navigasi.
+  \item \textbf{Optimasi Performa dan Komponen UI}: Menerapkan \textit{server-side search}, \textit{infinite scroll} pada pemilihan area/pelanggan, format pemisah ribuan otomatis pada nominal mata uang, serta konfigurasi pengurutan data default.
+  \item \textbf{Pemeliharaan dan Dukungan Operasional}: Menangani tiket bantuan operasional harian Parapay, melakukan penelusuran inkonsistensi data transaksi, serta menjalankan skrip perbaikan data pada basis data produksi untuk 28 DC/RDC nasional.
 \end{enumerate}
 
 \section{Sistematika Penulisan}
@@ -31,14 +41,14 @@ Laporan Kerja Praktik ini disusun dengan sistematika penulisan sebagai berikut:
 
 \begin{enumerate}[label=\arabic*)]
 \item \textbf{Bab I Pendahuluan}\\
-Bab ini menguraikan latar belakang pelaksanaan kerja praktik, lokasi dan waktu pelaksanaan, ruang lingkup pekerjaan yang dilakukan, serta sistematika penulisan laporan.
+Bab ini menguraikan latar belakang penagihan piutang di ParagonCorp, permasalahan sistem lama, lokasi dan waktu pelaksanaan, ruang lingkup pekerjaan, serta sistematika penulisan laporan.
 
 \item \textbf{Bab II Organisasi dan Lingkungan Kerja Praktik}\\
-Bab ini menjelaskan profil umum PT Paragon Technology and Innovation, struktur organisasi perusahaan dan tim FATL, serta deskripsi umum mengenai lingkungan tempat kerja praktik dilaksanakan.
+Bab ini menyajikan profil PT Paragon Technology and Innovation dan anak perusahaannya, struktur organisasi Direktorat IT, Divisi \textit{Software Engineering}, dan \textit{Stream} FATL, susunan tim Parapay, serta lingkungan kerja berbasis \textit{AI-Native SDLC}.
 
 \item \textbf{Bab III Judul Pekerjaan: Pengembangan Fungsi Manajemen Penagihan Piutang dan Alur Revisi Pembayaran pada Aplikasi Parapay}\\
-Bab ini menyajikan pembahasan teknis secara mendalam mengenai arsitektur sistem Parapay, analisis permasalahan, metode penyelesaian, implementasi fitur-fitur utama (Save as Draft, Revision Flow v2, Potong Tagihan, IndexedDB, dan optimasi UI), serta pengujian dan evaluasi hasil pekerjaan.
+Bab ini menjelaskan analisis kebutuhan dan proses bisnis penagihan Parapay secara rinci, perancangan dan implementasi fitur utama (Save as Draft, Revision v2, IndexedDB, Potong Tagihan, optimasi UI), dinamika dan kendala pelaksanaan pekerjaan, serta hasil evaluasi sistem.
 
 \item \textbf{Bab IV Rangkuman}\\
-Bab ini memberikan kesimpulan atas seluruh hasil pekerjaan Kerja Praktik serta menyampaikan saran-saran teknis maupun operasional untuk pengembangan aplikasi Parapay di masa mendatang.
+Bab ini memberikan kesimpulan atas seluruh pencapaian pekerjaan, evaluasi diri dan pembelajaran keprofesian, serta saran konstruktif untuk pengembangan sistem Parapay dan pelaksanaan Kerja Praktik selanjutnya.
 \end{enumerate}

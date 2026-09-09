@@ -1,38 +1,41 @@
 \chapter{Rangkuman}
 
 \section{Rangkuman Pelaksanaan Pekerjaan}
-Kegiatan Kerja Praktik telah dilaksanakan selama 10 minggu terhitung sejak 2 Juni 2026 hingga 11 Agustus 2026 di PT Paragon Technology and Innovation, tepatnya pada tim FATL (\textit{Financial Accounting \& Technology Logistics}) Direktorat \textit{Information Technology}. Penulis menjalankan tugas sebagai \textit{Software Engineer} dengan fokus utama melakukan pengembangan dan refactoring pada sistem aplikasi manajemen piutang usaha \textbf{Parapay}.
+Kerja Praktik telah dilaksanakan selama 10 minggu terhitung sejak 2 Juni 2026 hingga 11 Agustus 2026 di PT Paragon Technology and Innovation pada Direktorat \textit{Information Technology} (Divisi \textit{Software Engineering}, \textit{Stream} FATL). Penulis menjalankan peran sebagai \textit{Software Engineer} dengan fokus utama melakukan pengembangan dan refactoring pada sistem manajemen penagihan piutang usaha \textbf{Parapay}.
 
-Rangkaian pekerjaan dilaksanakan secara terstruktur melalui metodologi \textit{Agile Development}, mencakup tahap analisis kebutuhan bisnis bersama pembimbing teknis, perancangan komponen antarmuka antardepan berbasis \textit{React/TypeScript}, integrasi \textit{API backend}, pengujian fungsionalitas, hingga proses \textit{Merge Request} (MR) ke repositori utama perusahaan.
+Pekerjaan dilaksanakan dengan metodologi \textit{Agile Development} dalam ekosistem \textit{AI-Native SDLC}, yang mencakup analisis proses bisnis bersama tim akuntansi dan SAP, perancangan komponen antarmuka modular berbasis React dan TypeScript, perancangan ulang arsitektur revisi pembayaran (Revision v2), integrasi penyimpanan bukti transfer luring berbasis \textit{IndexedDB}, optimasi performa antarmuka, hingga dukungan operasional harian pasca rilis pada 28 pusat distribusi nasional.
 
 \section{Rangkuman Hasil Pekerjaan}
-Hasil utama yang diperoleh dari pelaksanaan Kerja Praktik ini meliputi:
+Hasil utama yang dicapai dari pelaksanaan Kerja Praktik ini meliputi:
 \begin{enumerate}[label=\arabic*)]
-  \item \textbf{Terimplementasinya Fitur Simpan Draf (\textit{Save as Draft})}: Memberikan fleksibilitas bagi \textit{collector} (FAR) untuk menyimpan progress penagihan secara sementara tanpa risiko kehilangan data akibat sesi terputus.
-  \item \textbf{Terwujudnya Arsitektur Alur Revisi Pembayaran Terbaru (\textit{Revision v2})}: Berhasil melakukan \textit{refactoring} besar-besaran dengan menggantikan kode usang Revision v1 menjadi komponen modular Revision v2 yang dilengkapi \textit{state invalidation}, pembatasan alokasi (\textit{non-allocation lock}), serta dukungan \textit{read-only mode}.
-  \item \textbf{Integrasi Penyimpanan Luring Berkas Bukti Bayar via IndexedDB}: Menghilangkan permasalahan gagal simpan bukti bayar transfer pada peramban saat terjadi perulangan alur revisi setor tunai.
-  \item \textbf{Optimasi Kinerja dan Antarmuka Pengguna}: Mengimplementasikan \textit{server-side search} dan \textit{infinite scroll} untuk pemuatan daftar pelanggan dan area koleksi, serta menyempurnakan format angka pemisah ribuan dan status \textit{badge} dinamik.
+  \item \textbf{Fitur Simpan Draf (\textit{Save as Draft})}: Berhasil diimplementasikan pada alur pembuatan koleksi penagihan, sehingga mengeliminasi risiko hilangnya data input FAR di lapangan akibat sesi peramban terputus.
+  \item \textbf{Arsitektur Alur Revisi Pembayaran Terbaru (Revision v2)}: Berhasil merefaktor arsitektur alur revisi dengan kemampuan memuat (\textit{fetch}) data pembayaran lama secara otomatis (menggantikan keharusan input ulang dari awal pada sistem lama), mengimplementasikan penguncian non-alokasi (\textit{non-allocation lock}), mendukung penambahan pembayaran berturut-turut (\textit{contiguous add payment}), serta menjaga batasan satu pembayaran tunai per koleksi melalui pengelompokan pelanggan pada alur \textit{Cash After Setor}.
+  \item \textbf{Rekonsiliasi 7 Tipe Pembayaran dan Modul Potong Tagihan}: Berhasil mengintegrasikan pemrosesan pembayaran tunai, transfer bank, bilyet giro, potong tagihan, tukar faktur, retur, dan nota debit/kredit dengan indikator status dinamik dan pengendalian hak akses (RBAC).
+  \item \textbf{Penyimpanan Bukti Transfer Luring via IndexedDB}: Menghilangkan permasalahan hilangnya berkas bukti transfer saat navigasi halaman sebelum pengiriman data penagihan.
+  \item \textbf{Optimasi Kinerja Antarmuka}: Menerapkan \textit{server-side search} dan \textit{infinite scroll} yang memastikan responsivitas halaman tetap optimal saat memuat lebih dari 50 data pelanggan dan area penagihan.
+  \item \textbf{Stabilitas Operasional Produksi}: Menyelesaikan tiket bantuan operasional harian dan menjalankan skrip perbaikan data (\textit{data patch}) pada basis data produksi untuk memastikan kelancaran transaksi di 28 cabang DC/RDC. Seluruh kode fitur telah berhasil digabungkan (\textit{merged}) ke repositori utama proyek Parapay.
 \end{enumerate}
 
 \section{Evaluasi Diri dan Pengembangan Keprofesian}
-Pelaksanaan Kerja Praktik di PT Paragon Technology and Innovation memberikan pembelajaran profesional yang sangat berharga bagi penulis. Beberapa aspek refleksi dan evaluasi diri yang diperoleh antara lain:
+Pelaksanaan Kerja Praktik memberikan pengalaman profesional yang berharga bagi penulis dalam berbagai aspek:
 \begin{enumerate}[label=\arabic*)]
-  \item \textbf{Peningkatan Kompetensi Teknis}: Penulis berhasil memperdalam pemahaman mengenai pengembangan aplikasi \textit{frontend} skala industri, perancangan arsitektur kode yang modular, pengelolaan state yang kompleks, serta pemanfaatan API peramban (\textit{IndexedDB}).
-  \item \textbf{Penerapan Etika Profesi dan Kerjasama Tim}: Penulis belajar menyesuaikan diri dengan standar penulisan kode perusahaan, menerapkan prinsip keterbacaan kode (\textit{clean code}), serta berkomunikasi secara efektif dan jujur dalam \textit{daily standup} maupun proses \textit{code review}.
-  \item \textbf{Manajemen Waktu dan Penyelesaian Masalah}: Dalam menghadapi kendala teknis seperti penanganan \textit{bug} pada alur kas atau penyesuaian \textit{endpoint} baru, penulis dilatih untuk berpikir analitis, mencari akar permasalahan melalui pencatatan log, dan berdiskusi secara proaktif dengan mentor.
+  \item \textbf{Peningkatan Kompetensi Teknis}: Penulis memperdalam penguasaan arsitektur perangkat lunak skala industri berbasis React, TypeScript, TanStack Query, Zustand, API peramban (\textit{IndexedDB}), serta integrasi sistem ERP berbasis SAP.
+  \item \textbf{Pengalaman Rekayasa Berbasis AI (\textit{AI-Native Engineering})}: Penulis belajar mengoptimalkan pemanfaatan perkakas AI dalam pengembangan kode tanpa mengorbankan integritas sistem yang sudah berjalan, melalui pemisahan komponen modular dan kendali versi Git yang disiplin.
+  \item \textbf{Penerapan Komunikasi dan Etika Profesi}: Penulis dilatih untuk proaktif berdiskusi dengan mentor teknis dan pemangku kepentingan bisnis, menyampaikan kendala secara transparan pada \textit{daily standup}, serta mematuhi standar penulisan kode dan prosedur keamanan data perusahaan.
 \end{enumerate}
 
 \section{Saran}
-Berdasarkan pengalaman dan hasil pelaksanaan Kerja Praktik, penulis memberikan beberapa saran yang dapat dijadikan pertimbangan pengembangan lebih lanjut:
+Berdasarkan pengalaman selama pelaksanaan Kerja Praktik, penulis memberikan beberapa saran konstruktif:
 
-\subsection{Saran untuk Pengembangan Aplikasi Parapay}
+\subsection{Saran untuk Pengembangan Sistem dan Tim Parapay}
 \begin{enumerate}[label=\arabic*)]
-  \item Mengembangkan fitur pengujian otomatis di sisi \textit{frontend} (\textit{unit testing} \& \textit{integration testing}) untuk modul Revision v2 guna mempermudah regresi saat terjadi pembaruan \textit{endpoint}.
-  \item Mempertimbangkan implementasi \textit{Service Worker} untuk memberikan kemampuan aplikasi web progresif (\textit{Progressive Web App} / PWA) secara penuh saat FAR berada di area dengan koneksi internet sangat terbatas.
+  \item \textbf{Penerapan \textit{Live Documentation} Terintegrasi}: Disarankan untuk memanfaatkan dokumentasi langsung yang terintegrasi pada setiap \textit{Pull Request / Merge Request} atau perkakas pencatat rapat (\textit{note taker}) otomatis, sehingga keputusan batasan bisnis (\textit{business constraints}) terdokumentasi dengan rapi dan tidak hanya bergantung pada komunikasi informal.
+  \item \textbf{Standarisasi Penggunaan \textit{Open Agent Orchestration} (OAC)}: Disarankan untuk menstandarisasi alur orkestrasi agen AI di antara seluruh pengembang agar konsistensi kode tetap terjaga dan instruksi baru tidak berpotensi meregresi fitur yang sudah stabil.
+  \item \textbf{Pengembangan Pengujian Otomatis}: Membangun modul pengujian otomatis (\textit{unit} dan \textit{integration testing}) khusus untuk skenario alur revisi multi-pembayaran guna mempercepat proses verifikasi sebelum rilis ke produksi.
 \end{enumerate}
 
-\subsection{Saran untuk Pelaksanaan Kerja Praktik Berikutnya}
+\subsection{Saran untuk Pelaksanaan Kerja Praktik Selanjutnya}
 \begin{enumerate}[label=\arabic*)]
-  \item Mahasiswa hendaknya mempersiapkan pemahaman awal mengenai arsitektur sistem dan pustaka utama yang digunakan perusahaan sebelum masa Kerja Praktik dimulai agar alur \textit{onboarding} berjalan lebih cepat.
-  \item Menjaga dokumentasi aktivitas harian secara konsisten sejak awal pelaksanaan Kerja Praktik untuk mempermudah proses penyusunan laporan akhir.
+  \item Mahasiswa hendaknya mempelajari gambaran umum proses bisnis dan arsitektur sistem perusahaan lebih awal agar proses adaptasi pada fase pengembangan berjalan lebih efektif.
+  \item Melakukan pencatatan aktivitas teknis dan keputusan arsitektural secara disiplin sejak awal kegiatan untuk mempermudah penyusunan dokumentasi laporan akhir.
 \end{enumerate}

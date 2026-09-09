@@ -1,60 +1,88 @@
 \chapter{Organisasi dan Lingkungan Kerja Praktik}
 
-\section{Profil Perusahaan}
-PT Paragon Technology and Innovation (ParagonCorp) merupakan salah satu perusahaan manufaktur kosmetik terbesar di Indonesia yang didirikan pada tahun 1985 oleh Nurhayati Subakat. Berawal dari industri skala rumah tangga, ParagonCorp telah berkembang pesat menjadi pemimpin pasar produk kecantikan dan perawatan diri nasional melalui merek-merek ternama seperti Wardah, Make Over, Emina, Kahf, LABORE, Biodef, Wonderly, dan Beyondly.
+\section{Profil Perusahaan dan Struktur Bisnis}
+PT Paragon Technology and Innovation (ParagonCorp) merupakan salah satu perusahaan manufaktur produk kosmetik dan perawatan diri terbesar di Indonesia. Didirikan pada tahun 1985 oleh Ibu Nurhayati Subakat, ParagonCorp telah berkembang pesat menjadi penguasa pangsa pasar nasional melalui berbagai merek unggulan seperti Wardah, Make Over, Emina, Kahf, LABORE, Biodef, Wonderly, dan Beyondly.
 
-ParagonCorp mengusung misi untuk memberikan kemanfaatan yang lebih besar bagi masyarakat melalui inovasi teknologi, keberlanjutan lingkungan, dan pemberdayaan sumber daya manusia. Kantor pusat (\textit{Head Office}) ParagonCorp berlokasi di Pesanggrahan, Jakarta Selatan, dengan fasilitas pabrik manufaktur utama yang berada di Kawasan Industri Jatake, Tangerang.
+Dalam menjalankan operasional bisnis berskala besar di tingkat nasional dan regional, ekosistem piutang usaha (\textit{Account Receivable}) ParagonCorp dikelola melalui beberapa entitas bisnis:
+\begin{enumerate}[label=\arabic*)]
+  \item \textbf{PT Parama Global Inspira (Parama)}: Berperan sebagai entitas distribusi dan logistik tunggal yang bertanggung jawab menyalurkan seluruh produk manufaktur ParagonCorp ke jaringan ritel, toko kosmetik, dan pusat distribusi di seluruh wilayah Indonesia dan Malaysia melalui 28 pusat distribusi (\textit{Distribution Center / Regional Distribution Center} atau DC/RDC).
+  \item \textbf{PT Paranova Global Optima (Paranova)}: Berfokus pada produk kesehatan, kebugaran holistik, dan perawatan kulit melalui merek Beyondly dengan model bisnis penjualan langsung (\textit{direct selling}) dan program pemberdayaan \textit{reseller}.
+\end{enumerate}
 
 \section{Struktur Organisasi}
-Struktur organisasi PT Paragon Technology and Innovation dirancang secara fungsional untuk mendukung efisiensi manufaktur, distribusi, serta integrasi teknologi informasi. Kegiatan Kerja Praktik penulis dilaksanakan pada \textbf{Direktorat \textit{Information Technology} (IT)}, khususnya dalam unit kerja \textbf{FATL (\textit{Financial Accounting \& Technology Logistics})}.
+Kegiatan Kerja Praktik penulis dilaksanakan pada \textbf{Direktorat \textit{Information Technology} (IT)}, di bawah naungan \textbf{Divisi \textit{Software Engineering}}, khususnya pada subdivisi atau \textit{Stream} \textbf{FATL (\textit{Finance, Accounting, Tax, and Legal})}.
 
-Gambar~\ref{fig:struktur-organisasi} menunjukkan struktur hirarki organisasi pada PT Paragon Technology and Innovation serta kedudukan unit FATL tempat penulis melaksanakan Kerja Praktik.
+\textit{Stream} FATL bertanggung jawab mengelola dan mengembangkan ekosistem sistem informasi keuangan perusahaan yang terbagi ke dalam tiga pilar utama:
+\begin{enumerate}[label=\alph*)]
+  \item \textbf{\textit{Budget Management}}: Aplikasi TFM (\textit{Trade Fund Management}) dan MARS.
+  \item \textbf{\textit{Receivable}}: Aplikasi Parapay, \textit{Debit Note}, \textit{Customer Claim}, \textit{Transfer PTI}, SOANG, dan \textit{Tax Calculator}.
+  \item \textbf{\textit{Payable}}: SCM Portal (Web Tukar Faktur), KOL \textit{Invoicing}, dan CASH.
+\end{enumerate}
+
+Gambar~\ref{fig:struktur-organisasi} menunjukkan struktur hirarki organisasi pada Direktorat IT PT Paragon Technology and Innovation serta kedudukan tim FATL dan aplikasi Parapay.
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[font=\small\sffamily, >=stealth, node distance=1.2cm]
-\tikzstyle{block} = [draw, rectangle, fill=blue!10, text width=4.5cm, text centered, rounded corners, minimum height=0.9cm]
-\tikzstyle{subblock} = [draw, rectangle, fill=gray!10, text width=3.8cm, text centered, minimum height=0.8cm]
-\tikzstyle{targetblock} = [draw=blue!80!black, line width=1.2pt, rectangle, fill=blue!25, text width=4.2cm, text centered, rounded corners, minimum height=0.9cm]
+\begin{tikzpicture}[font=\small\sffamily, >=stealth, node distance=1.1cm]
+\tikzstyle{block} = [draw, rectangle, fill=blue!10, text width=4.8cm, text centered, rounded corners, minimum height=0.8cm]
+\tikzstyle{subblock} = [draw, rectangle, fill=gray!10, text width=3.8cm, text centered, minimum height=0.75cm]
+\tikzstyle{targetblock} = [draw=blue!80!black, line width=1.1pt, rectangle, fill=blue!20, text width=4.5cm, text centered, rounded corners, minimum height=0.85cm]
+\tikzstyle{parapayblock} = [draw=blue!90!black, line width=1.2pt, rectangle, fill=green!15, text width=4.2cm, text centered, rounded corners, minimum height=0.85cm]
 
-\node[block] (ceo) {Board of Directors (CEO)};
-\node[block, below of=ceo, node distance=1.4cm] (dit) {Direktorat \textit{Information Technology}};
-\node[subblock, left of=dit, node distance=4.8cm] (mfg) {Direktorat \textit{Manufacturing}};
-\node[subblock, right of=dit, node distance=4.8cm] (cml) {Direktorat \textit{Commercial \& Sales}};
+\node[block] (dit) {Direktorat \textit{Information Technology}};
+\node[targetblock, below of=dit, node distance=1.3cm] (se) {Divisi \textit{Software Engineering}};
+\node[subblock, left of=se, node distance=4.5cm] (infra) {Divisi \textit{IT Infrastructure}};
+\node[subblock, right of=se, node distance=4.5cm] (sec) {Divisi \textit{Enterprise Security}};
 
-\node[targetblock, below of=dit, node distance=1.5cm] (fatl) {Tim FATL\\\footnotesize(\textit{Financial Accounting \& Tech Logistics})};
-\node[subblock, left of=fatl, node distance=4.0cm] (infra) {Tim \textit{Infrastructure \& Security}};
-\node[subblock, right of=fatl, node distance=4.0cm] (corp) {Tim \textit{Corporate Applications}};
+\node[targetblock, below of=se, node distance=1.3cm] (fatl) {\textit{Stream} FATL\\\footnotesize(Lead: Joeken King A. J.)};
+\node[subblock, left of=fatl, node distance=4.0cm] (mfg) {\textit{Stream Manufacturing}};
+\node[subblock, right of=fatl, node distance=4.0cm] (cml) {\textit{Stream Commercial}};
 
-\draw[->, thick] (ceo) -- (dit);
-\draw[->] (ceo) -| (mfg);
-\draw[->] (ceo) -| (cml);
-\draw[->, thick] (dit) -- (fatl);
+\node[parapayblock, below of=fatl, node distance=1.4cm] (parapay) {\textbf{Tim Aplikasi Parapay}\\\footnotesize(Semi Lead: Arief Rahman)};
+
+\draw[->, thick] (dit) -- (se);
 \draw[->] (dit) -| (infra);
-\draw[->] (dit) -| (corp);
+\draw[->] (dit) -| (sec);
+\draw[->, thick] (se) -- (fatl);
+\draw[->] (se) -| (mfg);
+\draw[->] (se) -| (cml);
+\draw[->, thick] (fatl) -- (parapay);
 \end{tikzpicture}
-\caption{Struktur organisasi PT Paragon Technology and Innovation dan posisi tim FATL}
+\caption{Struktur organisasi Direktorat IT PT Paragon Technology and Innovation dan posisi tim Parapay}
 \label{fig:struktur-organisasi}
 \end{figure}
 
-\section{Unit Kerja dan Lingkungan Kerja}
-Tim FATL (\textit{Financial Accounting \& Technology Logistics}) bertugas mengembangkan, mengintegrasikan, dan memelihara ekosistem aplikasi keuangan, logistik, serta akuntansi perusahaan. Salah satu produk unggulan yang dikelola oleh tim FATL adalah aplikasi \textbf{Parapay}, yaitu platform penagihan dan pelaporan transaksi piutang usaha (\textit{Account Receivable}) yang digunakan oleh ribuan \textit{collector} atau FAR (\textit{Field Account Receivable}) di berbagai cabang distribusikan di Indonesia.
+\section{Susunan Tim Pengembang Parapay}
+Pengembangan aplikasi Parapay dilakukan secara kolaboratif oleh tim lintas peran:
+\begin{itemize}
+  \item \textbf{Joeken King Abednego Judianto}: \textit{Lead Stream} FATL yang mengoordinasikan keselarasan produk terhadap kebutuhan bisnis akuntansi dan keuangan perusahaan.
+  \item \textbf{Arief Rahman}: \textit{Semi Lead Parapay} dan \textit{Dedicated Backend Developer}, yang bertindak sebagai pembimbing teknis harian bagi penulis dalam mendiskusikan batasan teknis dan integrasi API.
+  \item \textbf{Ananta Ihza}: \textit{Dedicated Frontend Developer} yang bersama penulis membangun modul-modul antarmuka web.
+  \item \textbf{Ahsan Malik Al Farisi} (Penulis): \textit{Dedicated Frontend Developer} dengan tanggung jawab pada modul revisi pembayaran, simpan draf, komponen potong tagihan, dan integrasi \textit{IndexedDB}.
+  \item \textbf{Tri Jaka Pamungkas}: \textit{Dedicated Mobile Frontend Developer}.
+  \item \textbf{Syanara Aulia} dan \textbf{Indita Ramashapira}: \textit{Project Manager} yang mengatur linimasa rilis dan prioritas penanganan fitur.
+  \item \textbf{Rika Nuriwati}: \textit{SAP Admin} yang memvalidasi integrasi data faktur antara Parapay dan SAP ERP.
+  \item \textbf{Tegar Satria Nurhuda}: Pembimbing resmi Kerja Praktik dari perusahaan.
+\end{itemize}
 
-Selama Kerja Praktik, penulis ditempatkan sebagai \textit{Software Engineer} (berfokus pada \textit{frontend development} serta integrasi API \textit{backend}) di bawah bimbingan langsung Bapak Tegar Satria Nurhuda. Lingkungan kerja di tim FATL menerapkan budaya kolaboratif dengan metodologi \textit{Agile Development}, yang mencakup pertemuan koordinasi harian (\textit{Daily Standup}), pengulasan kode (\textit{Code Review / Merge Request}), serta pengujian sistem secara berkala.
+\section{Lingkungan Kerja dan Penerapan \textit{AI-Native SDLC}}
+PT Paragon Technology and Innovation menerapkan metodologi pengembangan perangkat lunak modern yang berbasis \textit{Agile Development}. Koordinasi dilakukan melalui pertemuan harian (\textit{Daily Standup}), pengulasan kode secara ketat melalui mekanisme \textit{Merge Request} (MR) di GitLab, serta pengujian berkala pada lingkungan \textit{staging}.
+
+Selain itu, ParagonCorp telah menerapkan pendekatan \textbf{\textit{AI-Native SDLC}} (\textit{Software Development Life Cycle}). Dalam lingkungan ini, seluruh pengembang difasilitasi dengan kunci akses API model kecerdasan buatan (\textit{DeepSeek}) yang diintegrasikan langsung ke dalam lingkungan editor menggunakan perkakas seperti \textit{OpenCode} serta dianjurkan menggunakan \textit{Open Agent Orchestration} (OAC). Pendekatan ini mempercepat proses eksplorasi pustaka, pembuatan komponen antarmuka, serta penulisan fungsi logika bisnis.
 
 \section{Deskripsi Pekerjaan dan Tanggung Jawab}
 Tanggung jawab utama penulis selama pelaksanaan Kerja Praktik meliputi:
 \begin{enumerate}[label=\arabic*)]
-  \item menganalisis kebutuhan alur bisnis penagihan piutang dan revisi pembayaran bersama tim pengembang dan pembimbing;
-  \item merancang komponen antarmuka pengguna (\textit{User Interface}) berbasis komponen modular yang konsisten dengan desain aplikasi Parapay;
-  \item mengimplementasikan logika \textit{frontend} untuk pemrosesan status penagihan, validasi pengisian data, serta kalkulasi sisa pembayaran faktur;
-  \item merefaktor arsitektur alur revisi dari Revision v1 menuju Revision v2 yang lebih terpelihara (\textit{maintainable});
-  \item mengintegrasikan mekanisme penyimpanan luring berkas bukti bayar menggunakan \textit{IndexedDB}; dan
-  \item melakukan pengujian fungsionalitas, perbaikan \textit{bug} (\textit{bug fixing}), serta penggabungan kode (\textit{Merge Request}) ke repositori utama.
+  \item menganalisis kebutuhan proses bisnis penagihan piutang bersama \textit{Project Manager}, \textit{Tech Lead}, dan tim SAP;
+  \item merancang komponen antarmuka pengguna (\textit{User Interface}) berbasis React dan TypeScript yang modular dan responsif;
+  \item merefaktor arsitektur alur revisi dari Revision v1 menuju Revision v2 yang mendukung pemuatan otomatis data pembayaran lama dan aturan bisnis multi-pelanggan;
+  \item mengimplementasikan penyimpanan luring berkas bukti transfer berbasis \textit{IndexedDB};
+  \item melakukan optimasi pemuatan antarmuka melalui \textit{server-side search} dan \textit{infinite scroll}; dan
+  \item menangani penyelesaian tiket bantuan operasional harian pasca \textit{Go Live}, melakukan investigasi anomali data transaksi pada basis data produksi, serta menjalankan skrip perbaikan data (*data patch*) untuk 28 cabang DC/RDC.
 \end{enumerate}
 
 \section{Jadwal Kegiatan Kerja Praktik}
-Kerja Praktik dilaksanakan selama 10 minggu, terhitung mulai tanggal 2 Juni 2026 hingga 11 Agustus 2026. Tabel~\ref{tab:jadwal-kp} merangkum alokasi kegiatan mingguan yang dilaksanakan oleh penulis selama berada di tempat Kerja Praktik.
+Kerja Praktik dilaksanakan selama 10 minggu, mulai 2 Juni 2026 hingga 11 Agustus 2026. Tabel~\ref{tab:jadwal-kp} merangkum distribusi kegiatan mingguan yang dilaksanakan oleh penulis.
 
 \begin{table}[H]
 \caption{Jadwal rencana dan pelaksanaan kegiatan Kerja Praktik di PT Paragon Technology and Innovation}
@@ -64,11 +92,11 @@ Kerja Praktik dilaksanakan selama 10 minggu, terhitung mulai tanggal 2 Juni 2026
 \hline
 \textbf{Minggu} & \textbf{Rentang Waktu} & \textbf{Fokus Kegiatan Utama} \\
 \hline
-1 & 02 Juni – 05 Juni 2026 & Onboarding HR \& FATL, setup lingkungan pengembang \& akses VPN. \\
+1 & 02 Juni – 05 Juni 2026 & Onboarding HR \& FATL, setup lingkungan pengembang, VPN, \& analisis sistem Parapay. \\
 \hline
-2 & 08 Juni – 12 Juni 2026 & Pengembangan fitur \textit{Save as Draft} \& penanganan tipe pembayaran FAR. \\
+2 & 08 Juni – 12 Juni 2026 & Pengembangan fitur \textit{Save as Draft} \& penonaktifan tipe pembayaran tidak valid untuk FAR. \\
 \hline
-3 & 15 Juni – 19 Juni 2026 & Pembuatan fondasi antarmuka \textit{Revision Flow}. \\
+3 & 15 Juni – 19 Juni 2026 & Perancangan fondasi antarmuka \textit{Revision Flow}. \\
 \hline
 4 & 22 Juni – 26 Juni 2026 & Integrasi API \& pembuatan komponen halaman Potong Tagihan. \\
 \hline
@@ -76,13 +104,13 @@ Kerja Praktik dilaksanakan selama 10 minggu, terhitung mulai tanggal 2 Juni 2026
 \hline
 6 & 06 Juli – 10 Juli 2026 & Refactoring arsitektur Revision v2 \& implementasi \textit{Setor Cash Flow}. \\
 \hline
-7 & 13 Juli – 17 Juli 2026 & Integrasi \textit{endpoint} revisi pembayaran \& pengelompokan pelanggan. \\
+7 & 13 Juli – 17 Juli 2026 & Integrasi \textit{endpoint} revisi pembayaran \& pengelompokan riwayat per pelanggan. \\
 \hline
 8 & 20 Juli – 24 Juli 2026 & Implementasi \textit{IndexedDB} bukti transfer \& optimasi \textit{infinite scroll}. \\
 \hline
-9 & 27 Juli – 31 Juli 2026 & Pengujian integrasi, validasi \textit{edge cases}, \& penanganan \textit{bug fixing}. \\
+9 & 27 Juli – 31 Juli 2026 & Pengujian integrasi, validasi \textit{edge cases}, \& penanganan tiket operasional DC/RDC. \\
 \hline
-10 & 03 Ags – 11 Ags 2026 & Dokumentasi teknis, penyerahan kode, \& penyusunan laporan KP. \\
+10 & 03 Ags – 11 Ags 2026 & Penanganan tiket operasional harian, modul \textit{admin-receipt}, \& penyusunan laporan KP. \\
 \hline
 \end{tabularx}
 \end{table}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.2)  6 SEP 2026 22:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.2)  9 SEP 2026 19:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1050,7 +1050,7 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 14.4pt on input line 6.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 14.4pt on input line 12.
-<figures/logo-itb.png, id=138, 71.0655pt x 101.178pt>
+<figures/logo-itb.png, id=162, 71.0655pt x 101.178pt>
 File: figures/logo-itb.png Graphic file (type png)
 <use figures/logo-itb.png>
 Package pdftex.def Info: figures/logo-itb.png  used on input line 15.
@@ -1153,25 +1153,25 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
 (./frontmatter/Kata_Pengantar.tex [1
 
 
-] [2
+] [2] [3
 
-]) [3] (./main.toc
-Overfull \hbox (0.59647pt too wide) in paragraph at lines 15--15
+]) [4] (./main.toc
+Overfull \hbox (0.59647pt too wide) in paragraph at lines 16--16
  [][] [][]\OT1/ntxtlf/b/n/12 Pengembangan Fungsi Man-a-je-men Pe-nag-i-han Pi-u
 -tang dan Alur 
  []
 
-[4
+[5
 
 ])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [5] (./main.lof)
+ [6] (./main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- [6
+ [7
 
 ] (./main.lot
 Overfull \hbox (3.51318pt too wide) in paragraph at lines 4--4
@@ -1183,14 +1183,14 @@ rak-tik di PT Paragon
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
- [7
+ [8
 
 ] (./frontmatter/Daftar_Lampiran.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 5--135
 
  []
 
-[8
+[9
 
 ] (./frontmatter/Daftar_Istilah.tex
 Overfull \hbox (50.22635pt too wide) in alignment at lines 5--8
@@ -1198,169 +1198,156 @@ Overfull \hbox (50.22635pt too wide) in alignment at lines 5--8
  []
 
 
-Overfull \hbox (50.22635pt too wide) in alignment at lines 8--19
+Overfull \hbox (50.22635pt too wide) in alignment at lines 8--24
  [] [] [] 
  []
 
-) [9
+) [10
 
 ] (./chapters/BabI_Pendahuluan.tex
 \bbl@ensure@indonesian {Bab} 1.
-
-Overfull \hbox (9.69678pt too wide) in paragraph at lines 8--9
-[]\OT1/minntx/m/n/12 Seiring pe-sat-nya per-tum-buhan jum-lah transak-si dan ek
-span-si area op-era-sion-al Paragon,
- []
-
 [1
 
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input lin
-e 15.
+e 24.
  (/usr/share/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 15.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/it' will be
 (Font)              scaled to size 12.0pt on input line 24.
-
-Overfull \hbox (2.51967pt too wide) in paragraph at lines 25--26
-[]\OT1/ntxtlf/b/n/12 Persistensi Berkas Buk-ti Pem-ba-yaran Lur-ing\OT1/minntx/
-m/n/12 : Mengim-ple-men-tasikan peny-
- []
-
-[2{/usr/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}])
-(./chapters/BabII_Organisasi_dan_LKP.tex [3]
+ [2{/usr/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}] [3])
+(./chapters/BabII_Organisasi_dan_LKP.tex [4]
 \bbl@ensure@indonesian {Bab} 2.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/it' will be
+(Font)              scaled to size 12.0pt on input line 13.
+[5
+
+]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 20.
-LaTeX Font Info:    Trying to load font information for OT1+qhv on input line 2
-0.
-(/usr/share/texmf-dist/tex/latex/tex-gyre/ot1qhv.fd
+(Font)              scaled to size 10.95pt on input line 32.
+LaTeX Font Info:    Trying to load font information for OT1+qhv on input line 3
+2.
+ (/usr/share/texmf-dist/tex/latex/tex-gyre/ot1qhv.fd
 File: ot1qhv.fd 2009/09/25 v1.2 font definition file for OT1/qhv
 )
 LaTeX Font Info:    Font shape `OT1/qhv/m/n' will be
-(Font)              scaled to size 10.29301pt on input line 20.
+(Font)              scaled to size 10.29301pt on input line 32.
 LaTeX Font Info:    Font shape `OT1/qhv/m/it' will be
-(Font)              scaled to size 10.29301pt on input line 21.
+(Font)              scaled to size 10.29301pt on input line 32.
 LaTeX Font Info:    Font shape `OT1/qhv/m/n' will be
-(Font)              scaled to size 9.40002pt on input line 25.
-LaTeX Font Info:    Font shape `OT1/qhv/m/it' will be
-(Font)              scaled to size 9.40002pt on input line 25.
- [4
+(Font)              scaled to size 9.40002pt on input line 37.
+LaTeX Font Info:    Font shape `OT1/qhv/b/n' will be
+(Font)              scaled to size 10.29301pt on input line 41.
 
-]
-Overfull \hbox (5.4956pt too wide) in paragraph at lines 41--42
-\OT1/minntx/m/n/12 Tim FATL (\OT1/ntxtlf/m/it/12 Fi-nan-cial Ac-count-ing & Tec
-h-nol-o-gy Lo-gis-tics\OT1/minntx/m/n/12 ) bertu-gas mengem-bangkan,
+Overfull \hbox (3.21552pt too wide) in paragraph at lines 59--60
+\OT1/minntx/m/n/12 bertin-dak se-ba-gai pem-bimb-ing tek-nis har-i-an ba-gi pen
+ulis dalam mendiskusikan
  []
 
-[5{/usr/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-rm.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 87--87
+[6{/usr/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-rm.enc}] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
 []|\OT1/minntx/m/n/12 Onboarding HR &
  []
 
 
-Underfull \hbox (badness 4556) in paragraph at lines 87--87
-\OT1/minntx/m/n/12 pengem-bang & ak-ses
+Underfull \hbox (badness 1496) in paragraph at lines 115--115
+\OT1/minntx/m/n/12 pengem-bang, VPN, &
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--87
+Underfull \hbox (badness 2261) in paragraph at lines 115--115
+\OT1/minntx/m/n/12 tipe pem-ba-yaran tidak
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
 []|\OT1/minntx/m/n/12 Implementasi \OT1/ntxtlf/m/it/12 non-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--87
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
 []|\OT1/minntx/m/n/12 Refactoring ar-sitek-tur
  []
 
 
-Underfull \hbox (badness 1048) in paragraph at lines 87--87
+Underfull \hbox (badness 1048) in paragraph at lines 115--115
 \OT1/minntx/m/n/12 Re-vi-sion v2 & im-ple-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--87
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
 \OT1/minntx/m/n/12 men-tasi \OT1/ntxtlf/m/it/12 Se-tor Cash
  []
 
 
-Underfull \hbox (badness 3601) in paragraph at lines 87--87
+Underfull \hbox (badness 3601) in paragraph at lines 115--115
 []|\OT1/minntx/m/n/12 Integrasi \OT1/ntxtlf/m/it/12 end-point \OT1/minntx/m/n/1
 2 re-
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 87--87
+Underfull \hbox (badness 5622) in paragraph at lines 115--115
 []|\OT1/minntx/m/n/12 Implementasi \OT1/ntxtlf/m/it/12 In-dexed-
  []
 
 
-Underfull \hbox (badness 4316) in paragraph at lines 87--87
+Underfull \hbox (badness 4316) in paragraph at lines 115--115
 \OT1/minntx/m/n/12 i-dasi \OT1/ntxtlf/m/it/12 edge cas-es\OT1/minntx/m/n/12 , &
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--87
-[]|\OT1/minntx/m/n/12 Dokumentasi tek-nis,
+Underfull \hbox (badness 6157) in paragraph at lines 115--115
+[]|\OT1/minntx/m/n/12 Penanganan tiket op-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--87
-\OT1/minntx/m/n/12 peny-er-a-han kode, &
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
+\OT1/ntxtlf/m/it/12 admin-receipt\OT1/minntx/m/n/12 , &
  []
 
-) (./chapters/BabIII_Judul_Pekerjaan.tex [6] [7]
+) (./chapters/BabIII_Judul_Pekerjaan.tex [8]
+Overfull \vbox (35.26448pt too high) has occurred while \output is active []
+
+
+[9]
 \bbl@ensure@indonesian {Bab} 3.
-[8
+[10
 
 ]
+Overfull \hbox (8.99956pt too wide) in paragraph at lines 26--27
+[]\OT1/ntxtlf/b/n/12 Alokasi Pem-ba-yaran ke Fak-tur\OT1/minntx/m/n/12 : Satu t
+ransak-si pem-ba-yaran da-p-at di-alokasikan
+ []
+
+[11] [12]
 LaTeX Font Info:    Trying to load font information for OT1+ntxtt on input line
- 22.
+ 52.
  (/usr/share/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
 File: ot1ntxtt.fd 2012/04/20 v3.1
 )
 LaTeX Font Info:    Font shape `OT1/ntxtt/m/n' will be
-(Font)              scaled to size 12.0pt on input line 22.
- [9] [10]
-Overfull \hbox (36.36057pt too wide) in paragraph at lines 89--89
-[]\OT1/ntxtt/m/n/12 // Contoh penerapan alur penyimpanan bukti bayar luring via
- IndexedDB[] 
+(Font)              scaled to size 12.0pt on input line 52.
+ [13] [14]
+[15]
+Overfull \hbox (2.36357pt too wide) in paragraph at lines 141--142
+\OT1/minntx/m/n/12 memicu perbe-daan pema-haman di an-tara pengem-bang apa-bi-l
+a ter-da-p-at anggota
  []
 
-[11]) (./chapters/BabIV_Rangkuman.tex [12]
+[16]) (./chapters/BabIV_Rangkuman.tex [17]
 \bbl@ensure@indonesian {Bab} 4.
+[18
 
-Overfull \hbox (9.44345pt too wide) in paragraph at lines 13--14
-[]\OT1/ntxtlf/b/n/12 Integrasi Peny-im-panan Lur-ing Berkas Buk-ti Ba-yar via I
-n-dexed-DB\OT1/minntx/m/n/12 : Menghi-
- []
-
-
-Overfull \hbox (7.35565pt too wide) in paragraph at lines 14--15
-[]\OT1/ntxtlf/b/n/12 Optimasi Kin-er-ja dan An-tar-mu-ka Peng-gu-na\OT1/minntx/
-m/n/12 : Mengim-ple-men-tasikan \OT1/ntxtlf/m/it/12 server-
- []
-
-[13
-
-]
-Overfull \hbox (0.11961pt too wide) in paragraph at lines 22--23
-[]\OT1/ntxtlf/b/n/12 Manajemen Wak-tu dan Penye-le-sa-ian Masalah\OT1/minntx/m/
-n/12 : Dalam meng-hadapi kendala
- []
-
-[14]) (./backmatter/Referensi.tex [15]
+] [19]) (./backmatter/Referensi.tex [20]
 Overfull \hbox (6.50339pt too wide) in paragraph at lines 6--7
 \OT1/ntxtlf/m/it/12 Docs\OT1/minntx/m/n/12 . Ak-ses 10 Agus-tus 2026. []$\OT1/n
 txtt/m/n/12 https : / / developer . mozilla . org / en-[]US /
  []
 
-) (./appendices/TOR.tex [16
+) (./appendices/TOR.tex [21
 
 
 ]
@@ -1369,43 +1356,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--38
+Underfull \hbox (badness 10000) in paragraph at lines 37--39
 
  []
 
-[17
+[22
 
-]) [18] (./main.aux)
+]) [23] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CC91CF65D9A007DFFEA7DA8CDF7B629F;7623.
+(rerunfilecheck)             Checksum: 9DC9BC4948299C64D9425EE323A07080;9770.
  ) 
 Here is how much of TeX's memory you used:
- 29448 strings out of 469515
- 529445 string characters out of 5470808
- 917433 words of memory out of 5000000
- 57434 multiletter control sequences out of 15000+600000
- 667691 words of font info for 95 fonts, out of 8000000 for 9000
+ 29509 strings out of 469515
+ 530149 string characters out of 5470808
+ 918450 words of memory out of 5000000
+ 57458 multiletter control sequences out of 15000+600000
+ 667394 words of font info for 95 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,10n,117p,1680b,994s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/tex-gyre/qhvr.pfb></usr/share/texmf
--dist/fonts/type1/public/tex-gyre/qhvri.pfb></usr/share/texmf-dist/fonts/type1/
-public/tex-gyre/qtmr.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txtt
-.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texmf
--dist/fonts/type1/public/newtx/ztmbi.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/newtx/ztmr.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (30 pages, 316525 bytes).
+ 84i,10n,117p,1899b,961s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/tex-gyre/qhvb.pfb></usr/share/texmf
+-dist/fonts/type1/public/tex-gyre/qhvr.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/tex-gyre/qhvri.pfb></usr/share/texmf-dist/fonts/type1/public/tex-gyre/qtm
+r.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/share/te
+xmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/newtx/ztmbi.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
+</usr/share/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on main.pdf (36 pages, 347610 bytes).
 PDF statistics:
- 456 PDF objects out of 1000 (max. 8388607)
- 401 compressed objects within 5 object streams
- 125 named destinations out of 1000 (max. 500000)
- 282 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 548 PDF objects out of 1000 (max. 8388607)
+ 485 compressed objects within 5 object streams
+ 161 named destinations out of 1000 (max. 500000)
+ 330 words of extra memory for PDF output out of 10000 (max. 10000000)
 
